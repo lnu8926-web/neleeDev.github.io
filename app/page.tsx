@@ -2,6 +2,7 @@ import { GitBranch, Mail, ExternalLink, User, Briefcase, Code2 } from "lucide-re
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
+import HeroHeadline from "@/components/HeroHeadline";
 
 const PROJECTS = [
   {
@@ -53,8 +54,8 @@ export default function Home() {
       <main className="flex flex-col flex-1">
 
         {/* ── Hero / HOME ── */}
-        <section id="home" className="relative scanlines overflow-hidden border-b border-white/10 bg-brand-dark scroll-mt-14">
-          <div className="relative max-w-5xl mx-auto px-4 py-20 md:py-32 flex flex-col items-center">
+        <section id="home" className="relative scanlines overflow-hidden border-b border-white/10 bg-brand-dark scroll-mt-14 min-h-screen flex flex-col justify-center">
+          <div className="relative max-w-5xl mx-auto px-4 py-20 flex flex-col items-center w-full">
             <div className="inline-flex items-center gap-2 border border-brand-blue/50 bg-brand-grey px-3 py-1 mb-6 shadow-[2px_2px_0px_rgba(92,124,250,0.3)]">
               <span className="w-2 h-2 bg-brand-blue border border-brand-blue/60 animate-pulse" />
               <span className="font-(family-name:--font-pixel) text-[7px] uppercase tracking-widest text-brand-blue">
@@ -62,16 +63,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="font-(family-name:--font-pixel) text-3xl md:text-5xl lg:text-6xl text-brand-white leading-tight md:leading-tight uppercase mb-8 max-w-3xl text-center">
-              PIXEL<br />
-              <span className="text-brand-blue">PORTFOLIO</span>
-            </h1>
-
-            <p className="text-base md:text-lg text-brand-white/70 max-w-xl leading-relaxed mb-10 border-l-4 border-brand-blue/50 pl-4 bg-brand-grey/40">
-              풀스택 개발자 이름 (NAME)<br />
-              8비트 감성과 현대 기술로<br />
-              깔끔하고 특별한 웹서비스를 만듭니다.
-            </p>
+            <HeroHeadline />
 
             <div className="flex flex-wrap gap-3 justify-center">
               <a href="#projects">
@@ -89,7 +81,8 @@ export default function Home() {
         </section>
 
         {/* ── About ── */}
-        <section id="about" className="max-w-6xl mx-auto px-4 py-16 md:py-24 w-full scroll-mt-14">
+        <section id="about" className="min-h-screen flex flex-col justify-center scroll-mt-14 border-t border-white/10">
+          <div className="max-w-6xl mx-auto px-4 py-20 w-full">
           <div className="flex items-center gap-4 mb-10">
             <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
               <span className="font-(family-name:--font-pixel) text-[8px] text-brand-white uppercase tracking-widest">
@@ -112,18 +105,17 @@ export default function Home() {
             <div className="flex flex-col gap-6">
               <div>
                 <h2 className="font-(family-name:--font-pixel) text-lg md:text-2xl text-brand-white uppercase mb-1">
-                  NAME
+                  LEE Nam-eun
                 </h2>
                 <p className="font-(family-name:--font-pixel) text-[9px] text-brand-blue/80 uppercase tracking-widest">
-                  FULL-STACK DEVELOPER
+                  FRONT-END DEVELOPER
                 </p>
               </div>
 
               <p className="text-base text-brand-white/70 leading-relaxed max-w-lg">
-                안녕하세요, 저는 <b className="text-brand-white">풀스택 개발자</b>입니다.<br />
-                Next.js, Node.js, AI 통합에 관심이 많으며<br />
-                깔끔한 코드와 빠른 사용자 경험을 추구합니다.<br />
-                사이드 프로젝트와 오픈소스에 활발히 참여합니다.
+                안녕하세요, 저는 <b className="text-brand-white">프론트엔드 개발자</b>입니다.<br />
+                Next.js, React, TypeScript에 관심이 많으며<br />
+                기획부터 운영까지, 서비스 전체를 설계하고 만드는 프론트엔드 개발자입니다.
               </p>
 
               {/* 스킬 태그 */}
@@ -157,11 +149,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </div>
         </section>
 
         {/* ── Projects ── */}
-        <section id="projects" className="border-t border-white/10 bg-brand-black scroll-mt-14">
-          <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 w-full">
+        <section id="projects" className="min-h-screen flex flex-col justify-center border-t border-white/10 bg-brand-black scroll-mt-14">
+          <div className="max-w-6xl mx-auto px-4 py-20 w-full">
             <div className="flex items-center gap-4 mb-10">
               <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
                 <span className="font-(family-name:--font-pixel) text-[8px] text-brand-white uppercase tracking-widest">
@@ -245,8 +238,8 @@ export default function Home() {
         </section>
 
         {/* ── Contact ── */}
-        <section id="contact" className="border-t border-white/10 scroll-mt-14">
-          <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-8">
+        <section id="contact" className="min-h-screen flex flex-col justify-center border-t border-white/10 scroll-mt-14">
+          <div className="max-w-6xl mx-auto px-4 py-20 w-full flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
