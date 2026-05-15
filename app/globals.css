@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
+  --font-sans: var(--font-gothic);
   --color-brand-black: #0d0d0d;
   --color-brand-dark: #111;
   --color-brand-grey: #1c1c1c;
@@ -15,7 +16,10 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: none;
 }
+
+a, button { cursor: none; }
 
 :root {
   --background: #111;
@@ -47,6 +51,18 @@ html {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* 네온 글로우 */
+@keyframes glow-pink {
+  0%, 100% { text-shadow: 0 0 6px #FF85B3, 0 0 16px rgba(255,133,179,0.4); }
+  50%       { text-shadow: 0 0 12px #FF85B3, 0 0 30px rgba(255,133,179,0.7), 0 0 50px rgba(255,133,179,0.2); }
+}
+@keyframes glow-blue {
+  0%, 100% { text-shadow: 0 0 6px rgba(240,240,240,0.5), 0 0 16px rgba(92,124,250,0.3); }
+  50%       { text-shadow: 0 0 12px rgba(240,240,240,0.9), 0 0 28px rgba(92,124,250,0.5); }
+}
+.glow-pink { animation: glow-pink 2.5s ease-in-out infinite; }
+.glow-blue { animation: glow-blue 2.5s ease-in-out infinite; }
 
 /* 픽셀 배경 패턴 */
 .pixel-bg {

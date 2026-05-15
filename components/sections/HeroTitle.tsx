@@ -27,7 +27,7 @@ export default function HeroTitle({ onDone }: Props) {
   return (
     <>
       {displayed.split("").map((char, i) => (
-        <span key={i} className={char === "<" || char === ">" ? "text-brand-pink" : "text-brand-white"}>
+        <span key={i} className={char === "<" || char === ">" ? "text-brand-pink glow-pink" : "text-brand-white glow-blue"}>
           {char}
         </span>
       ))}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" shape-rendering="crispEdges">
+  <!-- tip -->
+  <rect x="14" y="0" width="4" height="4" fill="#f0f0f0"/>
+  <!-- body -->
+  <rect x="12" y="4" width="8" height="4" fill="#5C7CFA"/>
+  <rect x="10" y="8" width="12" height="4" fill="#5C7CFA"/>
+  <rect x="8"  y="12" width="16" height="4" fill="#5C7CFA"/>
+  <!-- cockpit -->
+  <rect x="13" y="6" width="6" height="4" fill="#f0f0f0"/>
+  <!-- wings -->
+  <rect x="2"  y="14" width="6" height="6" fill="#FF85B3"/>
+  <rect x="24" y="14" width="6" height="6" fill="#FF85B3"/>
+  <!-- engine -->
+  <rect x="10" y="18" width="4" height="4" fill="#FF85B3"/>
+  <rect x="18" y="18" width="4" height="4" fill="#FF85B3"/>
+  <!-- exhaust -->
+  <rect x="12" y="22" width="2" height="4" fill="#5C7CFA"/>
+  <rect x="18" y="22" width="2" height="4" fill="#5C7CFA"/>
+</svg>

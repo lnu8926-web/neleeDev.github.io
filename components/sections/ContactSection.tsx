@@ -29,7 +29,7 @@ export default function ContactSection() {
             </Button>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" size="lg" className="flex items-center gap-2 text-brand-white! border-white/30! hover:bg-brand-light! hover:border-white/50!">
+            <Button variant="ghost" size="lg" className="flex items-center gap-2">
               <GitBranch size={14} strokeWidth={2.5} />
               GitHub
             </Button>

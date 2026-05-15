@@ -15,7 +15,7 @@ export default function HeroHeadline() {
       <p
         className={[
           "text-base md:text-lg text-brand-white/70 max-w-xl leading-relaxed mb-10 border-l-4 border-brand-blue/50 pl-4 bg-brand-grey/40",
-          "transition-opacity duration-700",
+          "transition-opacity duration-2000",
           done ? "opacity-100" : "opacity-0",
         ].join(" ")}
       >
