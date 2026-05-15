@@ -1,4 +1,4 @@
-import { Briefcase, Code2, ExternalLink } from "lucide-react";
+import { Code2, ExternalLink } from "lucide-react";
 
 const PROJECTS = [
   {
@@ -37,79 +37,85 @@ const PROJECTS = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="min-h-screen flex flex-col justify-center border-t border-white/10 bg-brand-black scroll-mt-14">
-      <div className="max-w-6xl mx-auto px-4 py-20 w-full">
-        <div className="flex items-center gap-4 mb-10">
-          <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
-            <span className="font-(family-name:--font-pixel) text-[8px] text-brand-white uppercase tracking-widest">
-              PROJECTS
-            </span>
-          </div>
-          <div className="flex-1 h-px bg-white/10" />
+    <section
+      id="projects"
+      className="relative scanlines overflow-hidden min-h-screen flex flex-col justify-center border-t border-white/10 scroll-mt-14"
+      style={{ background: "linear-gradient(to bottom, #111111, #0d0d0d)" }}
+    >
+      <div className="relative max-w-5xl mx-auto px-4 py-20 w-full">
+
+        {/* 배지 — Hero/About 스타일 통일 */}
+        <div
+          className="inline-flex items-center gap-2 bg-brand-blue/15 border border-brand-blue/30 px-4 py-1.5 mb-12"
+          style={{ animation: "fadeInUp 0.6s ease both" }}
+        >
+          <span className="w-1.5 h-1.5 bg-brand-blue animate-pulse" />
+          <span className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest text-brand-blue/90">
+            PROJECTS
+          </span>
         </div>
 
-        <h2 className="font-(family-name:--font-pixel) text-lg md:text-2xl text-brand-white uppercase mb-2">
-          주요 프로젝트
-        </h2>
-        <p className="text-base text-brand-white/50 mb-10 max-w-lg leading-relaxed">
-          직접 기획하고 개발한 프로젝트들입니다.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {PROJECTS.map((project) => (
+        {/* 카드 그리드 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {PROJECTS.map((project, i) => (
             <div
               key={project.title}
-              className="border border-white/10 shadow-[4px_4px_0px_rgba(92,124,250,0.15)] bg-brand-grey p-5 flex flex-col gap-3 hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_rgba(92,124,250,0.35)] hover:border-brand-blue/30 transition-all duration-75"
+              className="border border-white/10 bg-brand-grey flex flex-col hover:-translate-y-0.5 hover:border-brand-blue/30 transition-all duration-75"
+              style={{
+                boxShadow: "4px 4px 0px rgba(92,124,250,0.15)",
+                animation: `fadeInUp 0.6s ease ${0.1 + i * 0.1}s both`,
+              }}
             >
-              <div className="flex items-start justify-between gap-2">
-                <div className="w-9 h-9 border border-brand-blue/50 bg-brand-blue/20 flex items-center justify-center shrink-0">
-                  <Briefcase size={16} strokeWidth={2.5} className="text-brand-blue" />
-                </div>
+              {/* 카드 타이틀 바 */}
+              <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-brand-light">
+                <span className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest text-brand-white/80">
+                  {project.title}
+                </span>
                 <span
                   className={[
                     "font-(family-name:--font-pixel) text-[7px] border px-2 py-0.5 uppercase tracking-wide",
                     project.status === "LIVE"
-                      ? "border-brand-blue bg-brand-blue text-white"
-                      : "border-white/20 bg-brand-light text-brand-white/50",
+                      ? "border-brand-blue/60 bg-brand-blue/20 text-brand-blue"
+                      : "border-white/20 bg-transparent text-brand-white/40",
                   ].join(" ")}
                 >
                   {project.status}
                 </span>
               </div>
 
-              <h3 className="font-(family-name:--font-pixel) text-[9px] uppercase tracking-widest text-brand-white leading-relaxed">
-                {project.title}
-              </h3>
-              <p className="text-xs text-brand-white/55 leading-relaxed flex-1">
-                {project.description}
-              </p>
+              {/* 카드 바디 */}
+              <div className="px-5 py-5 flex flex-col gap-4 flex-1">
+                <p className="text-sm text-brand-white/60 leading-relaxed flex-1">
+                  {project.description}
+                </p>
 
-              <div className="flex flex-wrap gap-1.5">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="font-(family-name:--font-pixel) text-[6px] border border-white/15 px-1.5 py-0.5 bg-brand-dark text-brand-white/50 uppercase"
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="font-(family-name:--font-pixel) text-[7px] border border-white/15 px-2 py-1 bg-brand-dark text-brand-white/50 uppercase"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-2">
+                  <a
+                    href={project.href}
+                    className="flex items-center gap-1.5 font-(family-name:--font-pixel) text-[8px] border border-white/20 px-3 py-2 bg-brand-dark hover:bg-brand-light text-brand-white/60 hover:text-brand-white transition-colors uppercase"
                   >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex gap-2 mt-1">
-                <a
-                  href={project.href}
-                  className="flex items-center gap-1 font-(family-name:--font-pixel) text-[7px] border border-white/20 px-2 py-1.5 bg-brand-dark hover:bg-brand-light text-brand-white/60 hover:text-brand-white transition-colors uppercase"
-                >
-                  <Code2 size={11} strokeWidth={2.5} />
-                  CODE
-                </a>
-                <a
-                  href={project.demo}
-                  className="flex items-center gap-1 font-(family-name:--font-pixel) text-[7px] border border-brand-blue px-2 py-1.5 bg-brand-blue text-white hover:bg-[#4a6ae8] transition-colors uppercase"
-                >
-                  <ExternalLink size={11} strokeWidth={2.5} />
-                  DEMO
-                </a>
+                    <Code2 size={13} strokeWidth={2.5} />
+                    CODE
+                  </a>
+                  <a
+                    href={project.demo}
+                    className="flex items-center gap-1.5 font-(family-name:--font-pixel) text-[8px] border border-brand-blue px-3 py-2 bg-brand-blue text-white hover:bg-[#4a6ae8] transition-colors uppercase"
+                  >
+                    <ExternalLink size={13} strokeWidth={2.5} />
+                    DEMO
+                  </a>
+                </div>
               </div>
             </div>
           ))}
