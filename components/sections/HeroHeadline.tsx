@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import HeroTitle from "./HeroTitle";
+import HeroTitle from "@/components/sections/HeroTitle";
 
 export default function HeroHeadline() {
   const [done, setDone] = useState(false);

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import LoadingScreen from "./LoadingScreen";
-import { BootContext } from "./BootContext";
+import LoadingScreen from "@/components/layout/LoadingScreen";
+import { BootContext } from "@/components/layout/BootContext";
 
 export default function BootWrapper({ children }: { children: React.ReactNode }) {
   const [loaded, setLoaded] = useState(false);

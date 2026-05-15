@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useBooted } from "./BootContext";
+import { useBooted } from "@/components/layout/BootContext";
 
 const FULL_TEXT = "<FRONTEND.DEV>";
 const SPEED = 80;

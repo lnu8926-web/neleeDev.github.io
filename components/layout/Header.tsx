@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, Terminal } from "lucide-react";
-import Button from "./Button";
+import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
   { label: "HOME", href: "#home" },

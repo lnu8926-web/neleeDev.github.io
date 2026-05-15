@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
-import BootWrapper from "@/components/BootWrapper";
+import BootWrapper from "@/components/layout/BootWrapper";
 import "./globals.css";
 
 const pixelFont = Press_Start_2P({
