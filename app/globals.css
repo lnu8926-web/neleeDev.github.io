@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-black: #111;
+  --color-brand-dark: #222;
+  --color-brand-grey: #C9CCD5;
+  --color-brand-light: #F4F4F4;
+  --color-brand-white: #fff;
+  --color-background: #F4F4F4;
+  --color-foreground: #111;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #F4F4F4;
+  --foreground: #111;
+}
+/* 픽셀 이모지 bounce 애니메이션 */
+.pixel-bounce {
+  animation: pixel-bounce 0.7s infinite alternate cubic-bezier(.5,1.8,.5,1.8);
+}
+@keyframes pixel-bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* 픽셀 배경 패턴 */
+.pixel-bg {
+  background-image: repeating-linear-gradient(45deg, #FFE066 0 2px, transparent 2px 8px), repeating-linear-gradient(-45deg, #FF8DCB 0 2px, transparent 2px 8px);
+}
+
+* {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Pixel font fallback styling */
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/WantedSans-Variable.woff2');
+}
+
+/* Pixel border utility */
+.pixel-border {
+  border: 2px solid #1a1a1a;
+  box-shadow: 3px 3px 0px #1a1a1a;
+}
+
+.pixel-border-inset {
+  border: 2px solid #1a1a1a;
+  box-shadow: inset 2px 2px 0px rgba(255,255,255,0.4), 3px 3px 0px #1a1a1a;
+}
+
+/* Scanline overlay effect */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
 }
