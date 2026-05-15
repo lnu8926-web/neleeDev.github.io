@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, Terminal } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
@@ -20,10 +20,11 @@ export default function Header() {
         {/* Logo */}
         <a
           href="/"
-          className="flex items-center gap-2 font-[family-name:var(--font-pixel)] text-[10px] text-brand-white uppercase tracking-widest"
+          className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest"
         >
-          <Terminal size={16} strokeWidth={2.5} className="text-brand-blue" />
-          PIXEL.DEV
+          <span className="text-brand-pink/70">&lt;</span>
+          <span className="text-brand-white">NELEE.DEV</span>
+          <span className="text-brand-pink/70"> /&gt;</span>
         </a>
 
         {/* Desktop Nav */}
@@ -32,7 +33,7 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className="font-[family-name:var(--font-pixel)] text-[8px] text-brand-white/60 uppercase tracking-widest px-3 py-2 hover:text-brand-white hover:bg-white/10 transition-colors border border-transparent hover:border-white/20"
+              className="font-(family-name:--font-pixel) text-[8px] text-brand-white/60 uppercase tracking-widest px-3 py-2 hover:text-brand-white hover:bg-white/10 transition-colors border border-transparent hover:border-white/20"
             >
               {link.label}
             </a>
@@ -60,7 +61,7 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block font-[family-name:var(--font-pixel)] text-[9px] text-brand-white/60 uppercase tracking-widest px-4 py-3 border-b border-white/10 hover:bg-white/5 hover:text-brand-white"
+              className="block font-(family-name:--font-pixel) text-[9px] text-brand-white/60 uppercase tracking-widest px-4 py-3 border-b border-white/10 hover:bg-white/5 hover:text-brand-white"
             >
               {link.label}
             </a>
