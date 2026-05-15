@@ -1,40 +1,94 @@
 import { GitBranch, Mail } from "lucide-react";
-import Button from "@/components/ui/Button";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="min-h-screen flex flex-col justify-center border-t border-white/10 scroll-mt-14">
-      <div className="max-w-6xl mx-auto px-4 py-20 w-full flex flex-col md:flex-row items-center justify-between gap-8">
-        <div>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
-              <span className="font-(family-name:--font-pixel) text-[8px] text-brand-white uppercase tracking-widest">
-                CONTACT
-              </span>
-            </div>
-          </div>
-          <h3 className="font-(family-name:--font-pixel) text-lg md:text-2xl text-brand-white uppercase mb-3">
-            함께 만들어요
-          </h3>
-          <p className="text-brand-white/60 text-base leading-relaxed max-w-md">
-            프로젝트 협업, 채용 문의, 잡담 모두 환영합니다.<br />
-            <b className="text-brand-white">편하게 메시지 주세요 :)</b>
-          </p>
+    <section
+      id="contact"
+      className="relative scanlines overflow-hidden min-h-screen flex flex-col justify-center border-t border-white/10 scroll-mt-14"
+      style={{ background: "linear-gradient(to bottom, #0d0d0d, #111111)" }}
+    >
+      <div className="relative max-w-3xl mx-auto px-4 py-20 w-full flex flex-col items-center">
+
+        {/* 배지 — 핑크 + 블루 혼합 */}
+        <div
+          className="inline-flex items-center gap-2 border px-4 py-1.5 mb-12"
+          style={{
+            background: "linear-gradient(90deg, rgba(92,124,250,0.12), rgba(255,133,179,0.12))",
+            borderColor: "rgba(92,124,250,0.3)",
+            animation: "fadeInUp 0.6s ease both",
+          }}
+        >
+          <span className="w-1.5 h-1.5 bg-brand-blue animate-pulse" />
+          <span className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest text-brand-white/80">
+            CONTACT
+          </span>
+          <span className="w-1.5 h-1.5 bg-brand-pink animate-pulse" />
         </div>
-        <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-          <a href="mailto:your@email.com">
-            <Button variant="primary" size="lg" className="flex items-center gap-2">
-              <Mail size={14} strokeWidth={2.5} />
+
+        {/* 헤드라인 */}
+        <h2
+          className="font-(family-name:--font-pixel) text-xl md:text-2xl uppercase text-center mb-4 leading-relaxed"
+          style={{ animation: "fadeInUp 0.6s ease 0.1s both" }}
+        >
+          <span className="text-brand-pink/60 glow-pink">&gt;</span>
+          {" "}
+          <span className="glow-blue text-brand-white">CONTACT</span>
+          <span className="text-brand-white/40">.</span>
+          <span className="glow-pink text-brand-pink">init</span>
+          <span className="text-brand-white/40">()</span>
+        </h2>
+
+        {/* 서브텍스트 */}
+        <p
+          className="text-base text-brand-white/60 leading-relaxed text-center max-w-md mb-4"
+          style={{ animation: "fadeInUp 0.6s ease 0.2s both" }}
+        >
+          새로운 기회와 협업 제안을 기다리고 있습니다.
+        </p>
+        <p
+          className="font-(family-name:--font-pixel) text-[8px] text-brand-white/30 uppercase tracking-widest mb-12"
+          style={{ animation: "fadeInUp 0.6s ease 0.3s both" }}
+        >
+          lnu8926@gmail.com
+        </p>
+
+        {/* 버튼 — 핑크(이메일) + 블루(GitHub) */}
+        <div
+          className="flex flex-col sm:flex-row gap-4"
+          style={{ animation: "fadeInUp 0.6s ease 0.4s both" }}
+        >
+          <a
+            href="mailto:lnu8926@gmail.com"
+            className="flex items-center justify-center gap-2 border border-brand-pink px-6 py-3 bg-brand-pink/10 hover:bg-brand-pink hover:text-white transition-colors text-brand-pink"
+            style={{ boxShadow: "4px 4px 0px rgba(255,133,179,0.25)" }}
+          >
+            <Mail size={16} strokeWidth={2.5} />
+            <span className="font-(family-name:--font-pixel) text-[9px] uppercase tracking-wide">
               이메일 보내기
-            </Button>
+            </span>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" size="lg" className="flex items-center gap-2">
-              <GitBranch size={14} strokeWidth={2.5} />
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 border border-brand-blue px-6 py-3 bg-brand-blue/10 hover:bg-brand-blue hover:text-white transition-colors text-brand-blue"
+            style={{ boxShadow: "4px 4px 0px rgba(92,124,250,0.25)" }}
+          >
+            <GitBranch size={16} strokeWidth={2.5} />
+            <span className="font-(family-name:--font-pixel) text-[9px] uppercase tracking-wide">
               GitHub
-            </Button>
+            </span>
           </a>
         </div>
+
+        {/* 하단 장식 */}
+        <p
+          className="font-(family-name:--font-pixel) text-[7px] text-brand-white/15 uppercase tracking-widest mt-20"
+          style={{ animation: "fadeInUp 0.6s ease 0.5s both" }}
+        >
+          © 2026 LEE Nam-eun — Built with Next.js
+        </p>
+
       </div>
     </section>
   );
