@@ -16,7 +16,7 @@ const variantStyles: Record<Variant, string> = {
   secondary:
     "bg-brand-pink text-[#1a1a1a] border-2 border-[#1a1a1a] shadow-[3px_3px_0px_#1a1a1a] hover:shadow-[1px_1px_0px_#1a1a1a] active:translate-y-1 active:shadow-none",
   ghost:
-    "bg-transparent text-[#1a1a1a] border-2 border-[#1a1a1a] shadow-[3px_3px_0px_#1a1a1a] hover:bg-brand-grey hover:shadow-[1px_1px_0px_#1a1a1a] active:translate-y-1 active:shadow-none",
+    "bg-transparent text-brand-white border-2 border-white/25 shadow-[3px_3px_0px_rgba(255,255,255,0.08)] hover:bg-brand-light hover:border-white/40 hover:shadow-[1px_1px_0px_rgba(255,255,255,0.08)] active:translate-y-1 active:shadow-none",
 };
 
 const sizeStyles: Record<Size, string> = {

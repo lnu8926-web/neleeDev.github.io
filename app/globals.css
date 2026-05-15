@@ -1,18 +1,25 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-brand-black: #111;
-  --color-brand-dark: #222;
-  --color-brand-grey: #C9CCD5;
-  --color-brand-light: #F4F4F4;
-  --color-brand-white: #fff;
-  --color-background: #F4F4F4;
-  --color-foreground: #111;
+  --color-brand-black: #0d0d0d;
+  --color-brand-dark: #111;
+  --color-brand-grey: #1c1c1c;
+  --color-brand-light: #272727;
+  --color-brand-white: #f0f0f0;
+  --color-brand-blue: #5C7CFA;
+  --color-brand-beige: #f5efde;
+  --color-brand-pink: #FF85B3;
+  --color-background: #111;
+  --color-foreground: #f0f0f0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
-  --background: #F4F4F4;
-  --foreground: #111;
+  --background: #111;
+  --foreground: #f0f0f0;
 }
 /* 픽셀 이모지 bounce 애니메이션 */
 .pixel-bounce {
@@ -21,6 +28,24 @@
 @keyframes pixel-bounce {
   0% { transform: translateY(0); }
   100% { transform: translateY(-8px); }
+}
+
+/* 타이프라이터 커서 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 떠다니는 픽셀 장식 */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(45deg); }
+}
+
+/* 섹션 fade-in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* 픽셀 배경 패턴 */
@@ -37,6 +62,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Pixel font fallback styling */
@@ -65,8 +95,8 @@ body {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.03) 2px,
-    rgba(0, 0, 0, 0.03) 4px
+    rgba(255, 255, 255, 0.025) 2px,
+    rgba(255, 255, 255, 0.025) 4px
   );
   pointer-events: none;
 }

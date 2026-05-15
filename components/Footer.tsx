@@ -8,7 +8,7 @@ const SOCIAL = [
 
 export default function Footer() {
   return (
-    <footer className="border-t-2 border-foreground bg-brand-grey mt-auto">
+    <footer className="border-t border-white/10 bg-brand-black mt-auto">
       <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="font-(family-name:--font-pixel) text-[8px] text-foreground uppercase tracking-widest">
           © 2026 PIXEL.DEV — ALL RIGHTS RESERVED
@@ -20,14 +20,14 @@ export default function Footer() {
               key={label}
               href={href}
               aria-label={label}
-              className="border-2 border-foreground p-2 bg-brand-beige hover:bg-brand-blue hover:text-white transition-colors shadow-[2px_2px_0px_#1a1a1a] active:translate-y-0.5 active:shadow-none"
+              className="border border-white/15 p-2 bg-brand-grey text-brand-white/50 hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-colors shadow-[2px_2px_0px_rgba(92,124,250,0.15)] active:translate-y-0.5 active:shadow-none"
             >
               <Icon size={14} strokeWidth={2.5} />
             </a>
           ))}
         </div>
 
-        <p className="font-(family-name:--font-pixel) text-[7px] text-[#555] uppercase tracking-widest">
+        <p className="font-(family-name:--font-pixel) text-[7px] text-white/20 uppercase tracking-widest">
           BUILT WITH NEXT.JS 15 + TAILWIND
         </p>
       </div>

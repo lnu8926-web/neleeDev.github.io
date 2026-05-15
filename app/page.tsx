@@ -1,53 +1,48 @@
-import { Code2, Layers, Zap, Cpu, Globe, Sparkles } from "lucide-react";
+import { GitBranch, Mail, ExternalLink, User, Briefcase, Code2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
-import Card from "@/components/Card";
 
-const FEATURES = [
+const PROJECTS = [
   {
-    icon: <Code2 size={18} strokeWidth={2.5} />,
-    title: "CLEAN CODE",
-    description: "읽기 좋고, 유지하기 쉬운 코드를 작성합니다. 명확한 구조와 일관된 컨벤션이 기본입니다.",
-    accent: false,
+    title: "PIXEL DASHBOARD",
+    description: "8비트 감성의 실시간 분석 대시보드. Next.js App Router와 Supabase 실시간 구독을 활용한 풀스택 프로젝트.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    href: "#",
+    demo: "#",
+    status: "LIVE",
   },
   {
-    icon: <Layers size={18} strokeWidth={2.5} />,
-    title: "FULL STACK",
-    description: "프론트엔드부터 백엔드까지. Next.js, Node.js, 데이터베이스 설계를 모두 다룹니다.",
-    accent: true,
+    title: "AI CHAT ENGINE",
+    description: "Claude API를 활용한 멀티턴 대화 에이전트. 컨텍스트 압축과 스트리밍 응답을 지원합니다.",
+    tags: ["Node.js", "Claude API", "Redis", "WebSocket"],
+    href: "#",
+    demo: "#",
+    status: "LIVE",
   },
   {
-    icon: <Zap size={18} strokeWidth={2.5} />,
-    title: "PERFORMANCE",
-    description: "Core Web Vitals 최적화와 번들 사이즈 최소화로 빠른 사용자 경험을 제공합니다.",
-    accent: false,
+    title: "DEVLOG PLATFORM",
+    description: "MDX 기반 기술 블로그 플랫폼. 풀텍스트 검색, 태그 필터, RSS 피드를 내장.",
+    tags: ["Next.js", "MDX", "PostgreSQL", "Vercel"],
+    href: "#",
+    demo: "#",
+    status: "WIP",
   },
   {
-    icon: <Cpu size={18} strokeWidth={2.5} />,
-    title: "AI INTEGRATION",
-    description: "LLM API와 에이전트 파이프라인을 활용해 지능형 기능을 서비스에 통합합니다.",
-    accent: true,
-  },
-  {
-    icon: <Globe size={18} strokeWidth={2.5} />,
-    title: "DEPLOYMENT",
-    description: "Vercel, Docker, CI/CD를 통한 안정적인 배포와 모니터링 환경을 구성합니다.",
-    accent: false,
-  },
-  {
-    icon: <Sparkles size={18} strokeWidth={2.5} />,
-    title: "UI / UX",
-    description: "픽셀 아트부터 모던 디자인까지. 사용자 경험을 중심에 둔 인터페이스를 만듭니다.",
-    accent: true,
+    title: "PIXEL UI KIT",
+    description: "8비트 스타일 React 컴포넌트 라이브러리. Tailwind 기반, 다크모드 지원, 완전 타입 안전.",
+    tags: ["React", "TypeScript", "Storybook", "npm"],
+    href: "#",
+    demo: "#",
+    status: "WIP",
   },
 ];
 
-const STATS = [
-  { value: "3+", label: "YEARS EXP" },
-  { value: "20+", label: "PROJECTS" },
-  { value: "100%", label: "PASSION" },
-  { value: "∞", label: "COFFEE" },
+const SKILLS = [
+  "Next.js", "React", "TypeScript", "Tailwind CSS",
+  "Node.js", "PostgreSQL", "Prisma", "Redis",
+  "Docker", "Vercel", "Git", "Figma",
+  "Claude API", "Python", "CI/CD", "REST / GraphQL",
 ];
 
 export default function Home() {
@@ -56,121 +51,243 @@ export default function Home() {
       <Header />
 
       <main className="flex flex-col flex-1">
-        {/* ── Hero Section ── */}
-        <section className="relative scanlines overflow-hidden border-b-2 border-brand-dark bg-brand-light">
+
+        {/* ── Hero / HOME ── */}
+        <section id="home" className="relative scanlines overflow-hidden border-b border-white/10 bg-brand-dark scroll-mt-14">
           <div className="relative max-w-5xl mx-auto px-4 py-20 md:py-32 flex flex-col items-center">
-            {/* 배지 */}
-            <div className="inline-flex items-center gap-2 border-2 border-brand-dark bg-brand-white px-3 py-1 mb-6 shadow-[2px_2px_0px_#222]">
-              <span className="w-2 h-2 bg-brand-dark border border-brand-dark animate-pulse" />
-              <span className="font-(family-name:--font-pixel) text-[7px] uppercase tracking-widest text-brand-dark">
+            <div className="inline-flex items-center gap-2 border border-brand-blue/50 bg-brand-grey px-3 py-1 mb-6 shadow-[2px_2px_0px_rgba(92,124,250,0.3)]">
+              <span className="w-2 h-2 bg-brand-blue border border-brand-blue/60 animate-pulse" />
+              <span className="font-(family-name:--font-pixel) text-[7px] uppercase tracking-widest text-brand-blue">
                 AVAILABLE FOR HIRE
               </span>
             </div>
 
-            {/* 메인 헤드라인 */}
-            <h1 className="font-(family-name:--font-pixel) text-3xl md:text-5xl lg:text-6xl text-brand-dark leading-tight md:leading-tight uppercase mb-6 max-w-3xl">
+            <h1 className="font-(family-name:--font-pixel) text-3xl md:text-5xl lg:text-6xl text-brand-white leading-tight md:leading-tight uppercase mb-8 max-w-3xl text-center">
               PIXEL<br />
-              <span className="text-brand-black">DASHBOARD</span>
+              <span className="text-brand-blue">PORTFOLIO</span>
             </h1>
 
-            <p className="text-base md:text-lg text-brand-dark max-w-xl leading-relaxed mb-10 border-l-4 border-brand-dark pl-4 bg-brand-white/60">
-              8비트 감성과 현대적 기술의 조화.<br />
-              깔끔하고 직관적인 대시보드로<br />
-              당신의 프로젝트를 빛나게 만듭니다.
+            <p className="text-base md:text-lg text-brand-white/70 max-w-xl leading-relaxed mb-10 border-l-4 border-brand-blue/50 pl-4 bg-brand-grey/40">
+              풀스택 개발자 이름 (NAME)<br />
+              8비트 감성과 현대 기술로<br />
+              깔끔하고 특별한 웹서비스를 만듭니다.
             </p>
 
-            {/* CTA 버튼 그룹 */}
-            <div className="flex flex-wrap gap-3">
-              <Button variant="primary" size="lg" className="bg-brand-dark! text-brand-white hover:bg-brand-black! hover:text-brand-white!">
-                내 작업 보기
-              </Button>
-              <Button variant="ghost" size="lg" className="bg-brand-white! text-brand-dark border-brand-dark! hover:bg-brand-dark! hover:text-brand-white!">
-                연락하기
-              </Button>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a href="#projects">
+                <Button variant="primary" size="lg">
+                  프로젝트 보기
+                </Button>
+              </a>
+              <a href="#contact">
+                <Button variant="ghost" size="lg" className="text-brand-white! border-white/30! hover:bg-brand-light! hover:border-white/50!">
+                  연락하기
+                </Button>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── About ── */}
+        <section id="about" className="max-w-6xl mx-auto px-4 py-16 md:py-24 w-full scroll-mt-14">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
+              <span className="font-(family-name:--font-pixel) text-[8px] text-brand-white uppercase tracking-widest">
+                ABOUT
+              </span>
+            </div>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10 items-start">
+            {/* 아바타 플레이스홀더 */}
+            <div className="border border-white/15 shadow-[4px_4px_0px_rgba(92,124,250,0.2)] bg-brand-light aspect-square max-w-50 flex flex-col items-center justify-center gap-2">
+              <User size={48} strokeWidth={1.5} className="text-brand-white/40" />
+              <span className="font-(family-name:--font-pixel) text-[7px] text-brand-white/40 uppercase">
+                PHOTO
+              </span>
             </div>
 
-            {/* 스탯 바 */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-0 border-2 border-brand-dark shadow-[4px_4px_0px_#222] max-w-xl bg-brand-white/80">
-              {STATS.map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className={[
-                    "flex flex-col items-center justify-center py-4 px-3",
-                    "bg-brand-light",
-                    i < STATS.length - 1 ? "border-r-2 border-brand-dark" : "",
-                    i === 1 || i === 3 ? "border-t-2 md:border-t-0 border-brand-dark" : "",
-                  ].join(" ")}
+            {/* 소개 텍스트 */}
+            <div className="flex flex-col gap-6">
+              <div>
+                <h2 className="font-(family-name:--font-pixel) text-lg md:text-2xl text-brand-white uppercase mb-1">
+                  NAME
+                </h2>
+                <p className="font-(family-name:--font-pixel) text-[9px] text-brand-blue/80 uppercase tracking-widest">
+                  FULL-STACK DEVELOPER
+                </p>
+              </div>
+
+              <p className="text-base text-brand-white/70 leading-relaxed max-w-lg">
+                안녕하세요, 저는 <b className="text-brand-white">풀스택 개발자</b>입니다.<br />
+                Next.js, Node.js, AI 통합에 관심이 많으며<br />
+                깔끔한 코드와 빠른 사용자 경험을 추구합니다.<br />
+                사이드 프로젝트와 오픈소스에 활발히 참여합니다.
+              </p>
+
+              {/* 스킬 태그 */}
+              <div className="flex flex-wrap gap-2">
+                {SKILLS.map((skill) => (
+                  <span
+                    key={skill}
+                    className="font-(family-name:--font-pixel) text-[7px] border border-white/15 px-2 py-1 bg-brand-grey shadow-[2px_2px_0px_rgba(92,124,250,0.15)] uppercase tracking-wide text-brand-white/60"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              {/* 소셜 링크 */}
+              <div className="flex gap-3">
+                <a
+                  href="#"
+                  className="flex items-center gap-1.5 border border-white/20 px-3 py-2 bg-brand-grey shadow-[2px_2px_0px_rgba(92,124,250,0.2)] hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-colors text-brand-white/70"
                 >
-                  <span className="font-(family-name:--font-pixel) text-xl md:text-3xl text-brand-dark">
-                    {stat.value}
-                  </span>
-                  <span className="font-(family-name:--font-pixel) text-[7px] text-brand-dark uppercase tracking-widest mt-1">
-                    {stat.label}
-                  </span>
+                  <GitBranch size={14} strokeWidth={2.5} />
+                  <span className="font-(family-name:--font-pixel) text-[8px] uppercase">GITHUB</span>
+                </a>
+                <a
+                  href="#"
+                  className="flex items-center gap-1.5 border border-white/20 px-3 py-2 bg-brand-grey shadow-[2px_2px_0px_rgba(92,124,250,0.2)] hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-colors text-brand-white/70"
+                >
+                  <Mail size={14} strokeWidth={2.5} />
+                  <span className="font-(family-name:--font-pixel) text-[8px] uppercase">EMAIL</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Projects ── */}
+        <section id="projects" className="border-t border-white/10 bg-brand-black scroll-mt-14">
+          <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 w-full">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
+                <span className="font-(family-name:--font-pixel) text-[8px] text-brand-white uppercase tracking-widest">
+                  PROJECTS
+                </span>
+              </div>
+              <div className="flex-1 h-px bg-white/10" />
+            </div>
+
+            <h2 className="font-(family-name:--font-pixel) text-lg md:text-2xl text-brand-white uppercase mb-2">
+              주요 프로젝트
+            </h2>
+            <p className="text-base text-brand-white/50 mb-10 max-w-lg leading-relaxed">
+              직접 기획하고 개발한 프로젝트들입니다.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {PROJECTS.map((project) => (
+                <div
+                  key={project.title}
+                  className="border border-white/10 shadow-[4px_4px_0px_rgba(92,124,250,0.15)] bg-brand-grey p-5 flex flex-col gap-3 hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_rgba(92,124,250,0.35)] hover:border-brand-blue/30 transition-all duration-75"
+                >
+                  {/* 헤더 */}
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="w-9 h-9 border border-brand-blue/50 bg-brand-blue/20 flex items-center justify-center shrink-0">
+                      <Briefcase size={16} strokeWidth={2.5} className="text-brand-blue" />
+                    </div>
+                    <span
+                      className={[
+                        "font-(family-name:--font-pixel) text-[7px] border px-2 py-0.5 uppercase tracking-wide",
+                        project.status === "LIVE"
+                          ? "border-brand-blue bg-brand-blue text-white"
+                          : "border-white/20 bg-brand-light text-brand-white/50",
+                      ].join(" ")}
+                    >
+                      {project.status}
+                    </span>
+                  </div>
+
+                  {/* 타이틀 & 설명 */}
+                  <h3 className="font-(family-name:--font-pixel) text-[9px] uppercase tracking-widest text-brand-white leading-relaxed">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-brand-white/55 leading-relaxed flex-1">
+                    {project.description}
+                  </p>
+
+                  {/* 태그 */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="font-(family-name:--font-pixel) text-[6px] border border-white/15 px-1.5 py-0.5 bg-brand-dark text-brand-white/50 uppercase"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* 링크 */}
+                  <div className="flex gap-2 mt-1">
+                    <a
+                      href={project.href}
+                      className="flex items-center gap-1 font-(family-name:--font-pixel) text-[7px] border border-white/20 px-2 py-1.5 bg-brand-dark hover:bg-brand-light text-brand-white/60 hover:text-brand-white transition-colors uppercase"
+                    >
+                      <Code2 size={11} strokeWidth={2.5} />
+                      CODE
+                    </a>
+                    <a
+                      href={project.demo}
+                      className="flex items-center gap-1 font-(family-name:--font-pixel) text-[7px] border border-brand-blue px-2 py-1.5 bg-brand-blue text-white hover:bg-[#4a6ae8] transition-colors uppercase"
+                    >
+                      <ExternalLink size={11} strokeWidth={2.5} />
+                      DEMO
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── Feature Cards Section ── */}
-        <section id="work" className="max-w-6xl mx-auto px-4 py-16 md:py-24 w-full">
-          {/* 섹션 헤더 */}
-          <div className="flex items-center gap-4 mb-10">
-            <div className="border-2 border-brand-dark bg-brand-white px-3 py-1 shadow-[2px_2px_0px_#222]">
-              <span className="font-(family-name:--font-pixel) text-[8px] text-brand-dark uppercase tracking-widest">
-                FEATURES
-              </span>
-            </div>
-            <div className="flex-1 h-0.5 bg-brand-dark" />
-          </div>
-
-          <h2 className="font-(family-name:--font-pixel) text-lg md:text-2xl text-brand-dark uppercase mb-2">
-            주요 기능
-          </h2>
-          <p className="text-base text-brand-dark mb-10 max-w-lg leading-relaxed">
-            다양한 기술과 경험으로<br />
-            <b className="text-brand-dark">깔끔하고 특별한</b> 웹서비스를 만듭니다.
-          </p>
-
-          {/* 카드 그리드 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {FEATURES.map((feature, idx) => (
-              <Card
-                key={feature.title}
-                title={feature.title}
-                description={feature.description}
-                icon={feature.icon}
-                accent={false}
-                className="bg-brand-white hover:bg-brand-light! hover:scale-105 transition-transform border-2 border-brand-dark shadow-[2px_2px_0px_#222]"
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* ── CTA 배너 ── */}
-        <section id="contact" className="border-t-2 border-b-2 border-brand-dark bg-brand-light">
-          <div className="max-w-6xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* ── Contact ── */}
+        <section id="contact" className="border-t border-white/10 scroll-mt-14">
+          <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <h3 className="font-(family-name:--font-pixel) text-lg md:text-2xl text-brand-dark uppercase mb-2">
-                프로젝트 문의
+              <div className="flex items-center gap-4 mb-6">
+                <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
+                  <span className="font-(family-name:--font-pixel) text-[8px] text-brand-white uppercase tracking-widest">
+                    CONTACT
+                  </span>
+                </div>
+              </div>
+              <h3 className="font-(family-name:--font-pixel) text-lg md:text-2xl text-brand-white uppercase mb-3">
+                함께 만들어요
               </h3>
-              <p className="text-brand-dark/80 text-base">
-                궁금한 점, 아이디어, 잡담도 환영!<br />
-                <b className="text-brand-dark">지금 바로 DM 주세요 :)</b>
+              <p className="text-brand-white/60 text-base leading-relaxed max-w-md">
+                프로젝트 협업, 채용 문의, 잡담 모두 환영합니다.<br />
+                <b className="text-brand-white">편하게 메시지 주세요 :)</b>
               </p>
             </div>
-            <div className="shrink-0">
-              <Button
-                variant="secondary"
-                size="lg"
-                className="bg-brand-dark! text-brand-white border-brand-dark! shadow-[3px_3px_0px_#222]!"
-              >
-                DM 보내기
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <a href="mailto:your@email.com">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="flex items-center gap-2"
+                >
+                  <Mail size={14} strokeWidth={2.5} />
+                  이메일 보내기
+                </Button>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="flex items-center gap-2 text-brand-white! border-white/30! hover:bg-brand-light! hover:border-white/50!"
+                >
+                  <GitBranch size={14} strokeWidth={2.5} />
+                  GitHub
+                </Button>
+              </a>
             </div>
           </div>
         </section>
+
       </main>
 
       <Footer />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
+import BootWrapper from "@/components/BootWrapper";
 import "./globals.css";
 
 const pixelFont = Press_Start_2P({
@@ -21,8 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${pixelFont.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-brand-beige text-foreground">
-        {children}
+      <body className="min-h-full flex flex-col bg-brand-dark text-foreground">
+        <BootWrapper>{children}</BootWrapper>
       </body>
     </html>
   );
