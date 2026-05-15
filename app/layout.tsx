@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Press_Start_2P, Gothic_A1 } from "next/font/google";
 import BootWrapper from "@/components/layout/BootWrapper";
 import CustomCursor from "@/components/layout/CustomCursor";
+import ScrollController from "@/components/layout/ScrollController";
 import "./globals.css";
 
 const pixelFont = Press_Start_2P({
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="ko" className={`${pixelFont.variable} ${gothicA1.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-brand-dark text-foreground">
         <CustomCursor />
+        <ScrollController />
         <BootWrapper>{children}</BootWrapper>
       </body>
     </html>
