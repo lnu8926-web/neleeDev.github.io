@@ -1,4 +1,5 @@
-import { GitBranch, Mail, User } from "lucide-react";
+import { GitBranch, Mail } from "lucide-react";
+import PixelAvatar from "@/components/sections/PixelAvatar";
 
 const SKILLS = [
   "Next.js", "React", "TypeScript", "Tailwind CSS",
@@ -9,7 +10,7 @@ const SKILLS = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="min-h-screen flex flex-col justify-center scroll-mt-14 border-t border-white/10">
+    <section id="about" className="relative scanlines min-h-screen flex flex-col justify-center scroll-mt-14 border-t border-white/10" style={{ background: 'linear-gradient(to bottom, #161616, #111111)' }}>
       <div className="max-w-6xl mx-auto px-4 py-20 w-full">
         <div className="flex items-center gap-4 mb-10">
           <div className="border border-white/20 bg-brand-grey px-3 py-1 shadow-[2px_2px_0px_rgba(92,124,250,0.2)]">
@@ -21,11 +22,8 @@ export default function AboutSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10 items-start">
-          <div className="border border-white/15 shadow-[4px_4px_0px_rgba(92,124,250,0.2)] bg-brand-light aspect-square max-w-50 flex flex-col items-center justify-center gap-2">
-            <User size={48} strokeWidth={1.5} className="text-brand-white/40" />
-            <span className="font-(family-name:--font-pixel) text-[7px] text-brand-white/40 uppercase">
-              PHOTO
-            </span>
+          <div className="flex items-center justify-center">
+            <PixelAvatar />
           </div>
 
           <div className="flex flex-col gap-6">
