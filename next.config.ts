@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/neleeDev.github.io",
+  basePath: process.env.NODE_ENV === "production" ? "/neleeDev.github.io" : "",
   images: { unoptimized: true },
 };
 
