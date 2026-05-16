@@ -8,6 +8,13 @@ const SKILLS = [
   "Claude API", "Python", "CI/CD", "REST / GraphQL",
 ];
 
+const SKILL_CATEGORIES = [
+  { label: "FRONTEND",     color: "#5C7CFA", skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Phaser.js"] },
+  { label: "STATE / API",  color: "#FF85B3", skills: ["TanStack Query", "Zustand", "Zod", "Axios", "React Hook Form", "JWT"] },
+  { label: "BACKEND",      color: "#6ee7b7", skills: ["Node.js", "Express", "Spring", "Java", "PostgreSQL", "Socket.io"] },
+  { label: "DEVOPS / TOOLS", color: "#a78bfa", skills: ["Docker", "AWS", "Terraform", "Git", "Figma", "Notion", "Claude Code"] },
+];
+
 export default function AboutSection() {
   return (
     <section
@@ -65,18 +72,31 @@ export default function AboutSection() {
           사용자가 보고 느끼는 모든 것을 설계합니다.
         </p>
 
-        {/* 스킬 태그 */}
+        {/* 스킬 — 카테고리 카드 */}
         <div
-          className="flex flex-wrap gap-2 justify-center mb-10 max-w-xl"
+          className="grid grid-cols-2 gap-3 w-full max-w-xl mb-10"
           style={{ animation: "fadeInUp 0.6s ease 0.5s both" }}
         >
-          {SKILLS.map((skill) => (
-            <span
-              key={skill}
-              className="font-(family-name:--font-pixel) text-[7px] border border-white/15 px-2 py-1 bg-brand-grey shadow-[2px_2px_0px_rgba(92,124,250,0.15)] uppercase tracking-wide text-brand-white/60"
-            >
-              {skill}
-            </span>
+          {SKILL_CATEGORIES.map((cat) => (
+            <div key={cat.label} className="border border-white/10 bg-brand-grey" style={{ boxShadow: `3px 3px 0px ${cat.color}40` }}>
+              {/* 카드 헤더 */}
+              <div className="px-3 py-2 border-b border-white/10" style={{ backgroundColor: `${cat.color}20` }}>
+                <span className="font-(family-name:--font-pixel) text-[8px] uppercase tracking-widest" style={{ color: cat.color }}>
+                  ▸ {cat.label}
+                </span>
+              </div>
+              {/* 스킬 태그 */}
+              <div className="p-3 flex flex-wrap gap-1.5">
+                {cat.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="font-(family-name:--font-pixel) text-[7px] px-2 py-1 uppercase tracking-wide text-brand-white/75 border border-white/10 bg-brand-dark"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 
