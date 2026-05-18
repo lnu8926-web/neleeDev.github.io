@@ -2,19 +2,11 @@ import { Code2, ExternalLink } from "lucide-react";
 
 const PROJECTS = [
   {
-    title: "PIXEL DASHBOARD",
-    description: "8비트 감성의 실시간 분석 대시보드. Next.js App Router와 Supabase 실시간 구독을 활용한 풀스택 프로젝트.",
-    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
-    href: "#",
-    demo: "#",
-    status: "LIVE",
-  },
-  {
-    title: "AI CHAT ENGINE",
-    description: "Claude API를 활용한 멀티턴 대화 에이전트. 컨텍스트 압축과 스트리밍 응답을 지원합니다.",
-    tags: ["Node.js", "Claude API", "Redis", "WebSocket"],
-    href: "#",
-    demo: "#",
+    title: "TASKRY",
+    description: "칸반 보드, 대시보드, 캘린더, 공지사항, 메모까지 한 곳에서 관리하는 풀스택 협업 웹 애플리케이션. 드래그 앤 드롭 · 실시간 동기화 · 역할 기반 권한 관리 지원.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    href: "https://github.com/lnu8926-web/NextTaskry",
+    demo: "https://task-ry.vercel.app/",
     status: "LIVE",
   },
   {
