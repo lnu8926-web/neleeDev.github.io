@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-brand-black mt-auto">
       <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="font-(family-name:--font-pixel) text-[8px] text-foreground uppercase tracking-widest">
-          © 2026 PIXEL.DEV — ALL RIGHTS RESERVED
+          © 2026 NEELEE.DEV — ALL RIGHTS RESERVED
         </p>
 
         <div className="flex items-center gap-2">

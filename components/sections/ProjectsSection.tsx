@@ -1,21 +1,23 @@
-import { Code2, ExternalLink } from "lucide-react";
+import { Code2, GitBranch, ExternalLink } from "lucide-react";
 
 const PROJECTS = [
   {
     title: "TASKRY",
     description: "칸반 보드, 대시보드, 캘린더, 공지사항, 메모까지 한 곳에서 관리하는 풀스택 협업 웹 애플리케이션. 드래그 앤 드롭 · 실시간 동기화 · 역할 기반 권한 관리 지원.",
-    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
     href: "https://github.com/lnu8926-web/NextTaskry",
     demo: "https://task-ry.vercel.app/",
     status: "LIVE",
   },
   {
-    title: "DEVLOG PLATFORM",
-    description: "MDX 기반 기술 블로그 플랫폼. 풀텍스트 검색, 태그 필터, RSS 피드를 내장.",
-    tags: ["Next.js", "MDX", "PostgreSQL", "Vercel"],
-    href: "#",
-    demo: "#",
-    status: "WIP",
+    title: "DANCADE",
+    description: "Next.js + Phaser 3 기반 실시간 멀티플레이어 아케이드 게임 플랫폼. Socket.io로 실시간 통신 구현, AWS EC2에 직접 배포·운영",
+    tags: [
+      "Phaser 3", "Socket.io", "Next.js", "TypeScript", "AWS EC2"
+    ],
+    href: "https://github.com/lnu8926-web/Dancade",
+    demo: "http://13.210.110.208/",
+    status: "LIVE",
   },
   {
     title: "PIXEL UI KIT",
@@ -97,8 +99,8 @@ export default function ProjectsSection() {
                     href={project.href}
                     className="flex items-center gap-1.5 font-(family-name:--font-pixel) text-[8px] border border-white/20 px-3 py-2 bg-brand-dark hover:bg-brand-light text-brand-white/60 hover:text-brand-white transition-colors uppercase"
                   >
-                    <Code2 size={13} strokeWidth={2.5} />
-                    CODE
+                    <GitBranch size={13} strokeWidth={2.5} />
+                    GITHUB
                   </a>
                   <a
                     href={project.demo}

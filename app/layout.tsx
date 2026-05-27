@@ -20,8 +20,8 @@ const gothicA1 = Gothic_A1({
 });
 
 export const metadata: Metadata = {
-  title: "PIXEL.DEV — 8-Bit Portfolio",
-  description: "A pixel art style portfolio built with Next.js 15 and Tailwind CSS",
+  title: "NELEE.DEV | FRONTEND Developer Portfolio",
+  description: "8비트 무드를 담아 만든 프론트엔드 개발자 포트폴리오입니다.",
 };
 
 export default function RootLayout({
