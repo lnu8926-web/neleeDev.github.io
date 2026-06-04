@@ -24,20 +24,20 @@ export default function LoadingScreen({ onDone }: Props) {
     let p = 0;
     const tick = () => {
       const remaining = 100 - p;
-      const speed = remaining > 25 ? 5 : remaining > 8 ? 2 : 0.8;
-      p = Math.min(p + Math.random() * speed + 0.3, 100);
+      const speed = remaining > 25 ? 15 : remaining > 8 ? 6 : 2;
+      p = Math.min(p + Math.random() * speed + 0.5, 100);
       setProgress(Math.round(p));
 
       if (p < 100) {
-        setTimeout(tick, 60 + Math.random() * 100);
+        setTimeout(tick, 30 + Math.random() * 50);
       } else {
         setTimeout(() => {
           setExiting(true);
-          setTimeout(onDone, 650);
-        }, 800);
+          setTimeout(onDone, 350);
+        }, 300);
       }
     };
-    const init = setTimeout(tick, 200);
+    const init = setTimeout(tick, 100);
     return () => clearTimeout(init);
   }, [onDone]);
 
@@ -47,8 +47,8 @@ export default function LoadingScreen({ onDone }: Props) {
   return (
     <div
       className={[
-        "fixed inset-0 z-[9999] bg-[#111] flex flex-col items-center justify-center",
-        "transition-opacity duration-700",
+        "fixed inset-0 z-9999 bg-[#111] flex flex-col items-center justify-center",
+        "transition-opacity duration-300",
         exiting ? "opacity-0 pointer-events-none" : "opacity-100",
       ].join(" ")}
     >
