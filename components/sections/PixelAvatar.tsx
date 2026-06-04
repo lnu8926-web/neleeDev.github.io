@@ -1,8 +1,8 @@
 export default function PixelAvatar() {
   return (
     <svg
-      width="160"
-      height="200"
+      width="96"
+      height="120"
       viewBox="0 0 80 100"
       xmlns="http://www.w3.org/2000/svg"
       shapeRendering="crispEdges"

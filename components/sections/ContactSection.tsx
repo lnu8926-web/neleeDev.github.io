@@ -1,4 +1,5 @@
 import { GitBranch, Mail } from "lucide-react";
+import Container from "@/components/layout/Container";
 
 export default function ContactSection() {
   return (
@@ -7,7 +8,7 @@ export default function ContactSection() {
       className="relative scanlines overflow-hidden min-h-screen flex flex-col justify-center border-t border-white/10 scroll-mt-14"
       style={{ background: "linear-gradient(to bottom, #0d0d0d, #111111)" }}
     >
-      <div className="relative max-w-3xl mx-auto px-4 py-20 w-full flex flex-col items-center">
+      <Container className="relative py-20 flex flex-col items-center">
 
         {/* 배지 — 핑크 + 블루 혼합 */}
         <div
@@ -89,7 +90,7 @@ export default function ContactSection() {
           © 2026 LEE Nam-eun — Built with Next.js
         </p>
 
-      </div>
+      </Container>
     </section>
   );
 }

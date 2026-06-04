@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Button from "@/components/ui/Button";
+import Container from "@/components/layout/Container";
 
 const NAV_LINKS = [
   { label: "HOME", href: "#home" },
@@ -27,7 +28,7 @@ export default function Header() {
 
   return (
     <header className="bg-brand-grey border-b border-white/10 sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+      <Container className="h-14 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest">
           <span className="text-brand-pink/70">&lt;</span>
@@ -59,7 +60,7 @@ export default function Header() {
         >
           {menuOpen ? <X size={16} strokeWidth={2.5} /> : <Menu size={16} strokeWidth={2.5} />}
         </button>
-      </div>
+      </Container>
 
       {/* Mobile Nav */}
       {menuOpen && (

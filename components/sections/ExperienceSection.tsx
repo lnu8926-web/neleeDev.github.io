@@ -1,4 +1,5 @@
 import { GraduationCap, Briefcase } from "lucide-react";
+import Container from "@/components/layout/Container";
 
 const EDUCATION = [
   {
@@ -31,7 +32,7 @@ export default function ExperienceSection() {
       className="relative scanlines overflow-hidden min-h-screen flex flex-col justify-center border-t border-white/10 scroll-mt-14"
       style={{ background: "linear-gradient(to bottom, #111111, #0d0d0d)" }}
     >
-      <div className="relative max-w-3xl mx-auto px-4 py-20 w-full">
+      <Container className="relative py-20">
 
         {/* 배지 */}
         <div
@@ -115,7 +116,7 @@ export default function ExperienceSection() {
           </div>
         </div>
 
-      </div>
+      </Container>
     </section>
   );
 }

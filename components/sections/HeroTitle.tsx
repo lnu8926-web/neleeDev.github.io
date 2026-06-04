@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useBooted } from "@/components/layout/BootContext";
 
-const FULL_TEXT = "<FRONTEND.DEV>";
+const FULL_TEXT = "<NELEE.DEV>";
 const SPEED = 80;
 
 interface Props {

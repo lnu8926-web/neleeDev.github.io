@@ -17,6 +17,12 @@
 html {
   scroll-behavior: smooth;
   cursor: none;
+  scrollbar-width: none;
+  scrollbar-gutter: stable both-edges;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 a, button { cursor: none; }
@@ -24,6 +30,7 @@ a, button { cursor: none; }
 :root {
   --background: #111;
   --foreground: #f0f0f0;
+  --nav-h: 3.5rem; /* h-14 = 56px */
 }
 /* 픽셀 이모지 bounce 애니메이션 */
 .pixel-bounce {
@@ -78,11 +85,6 @@ a, button { cursor: none; }
 body {
   background: var(--background);
   color: var(--foreground);
-  scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 /* Pixel font fallback styling */
