@@ -1,12 +1,5 @@
-import { GitBranch, Mail } from "lucide-react";
+import { GitBranch, Mail, FileDown } from "lucide-react";
 import PixelAvatar from "@/components/sections/PixelAvatar";
-
-const SKILLS = [
-  "Next.js", "React", "TypeScript", "Tailwind CSS",
-  "Node.js", "PostgreSQL", "Prisma", "Redis",
-  "Docker", "Vercel", "Git", "Figma",
-  "Claude API", "Python", "CI/CD", "REST / GraphQL",
-];
 
 const SKILL_CATEGORIES = [
   { label: "FRONTEND",     color: "#5C7CFA", skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Phaser.js"] },
@@ -102,22 +95,33 @@ export default function AboutSection() {
 
         {/* 버튼 */}
         <div
-          className="flex gap-3"
+          className="flex gap-3 flex-wrap justify-center"
           style={{ animation: "fadeInUp 0.6s ease 0.6s both" }}
         >
           <a
-            href="#"
+            href="#" // TODO: GitHub URL 입력
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1.5 border border-white/20 px-3 py-2 bg-brand-grey shadow-[2px_2px_0px_rgba(92,124,250,0.2)] hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-colors text-brand-white/70"
           >
             <GitBranch size={14} strokeWidth={2.5} />
             <span className="font-(family-name:--font-pixel) text-[8px] uppercase">GITHUB</span>
           </a>
           <a
-            href="#"
+            href="mailto:lnu8926@gmail.com"
             className="flex items-center gap-1.5 border border-white/20 px-3 py-2 bg-brand-grey shadow-[2px_2px_0px_rgba(92,124,250,0.2)] hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-colors text-brand-white/70"
           >
             <Mail size={14} strokeWidth={2.5} />
             <span className="font-(family-name:--font-pixel) text-[8px] uppercase">EMAIL</span>
+          </a>
+          {/* TODO: 이력서 PDF를 /public/resume.pdf 에 두고 href 연결 */}
+          <a
+            href="/resume.pdf"
+            download
+            className="flex items-center gap-1.5 border border-brand-pink/50 px-3 py-2 bg-brand-grey shadow-[2px_2px_0px_rgba(255,133,179,0.2)] hover:bg-brand-pink hover:border-brand-pink hover:text-white transition-colors text-brand-pink/70"
+          >
+            <FileDown size={14} strokeWidth={2.5} />
+            <span className="font-(family-name:--font-pixel) text-[8px] uppercase">RESUME</span>
           </a>
         </div>
 

@@ -1,9 +1,12 @@
-import { Code2, GitBranch, ExternalLink } from "lucide-react";
+import { GitBranch, ExternalLink, Clock, Users, TrendingUp } from "lucide-react";
 
 const PROJECTS = [
   {
     title: "TASKRY",
     description: "칸반 보드, 대시보드, 캘린더, 공지사항, 메모까지 한 곳에서 관리하는 풀스택 협업 웹 애플리케이션. 드래그 앤 드롭 · 실시간 동기화 · 역할 기반 권한 관리 지원.",
+    period: "20XX.XX — 20XX.XX",       // 개발 기간을 입력하세요
+    role: "솔로 / 팀 N명 중 역할",     // 예: 솔로 풀스택 / 팀 3명 중 프론트엔드 리드
+    metrics: "성과 수치를 입력하세요", // 예: 사용자 OO명, 렌더링 Xms → Yms 등 (없으면 null)
     tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
     href: "https://github.com/lnu8926-web/NextTaskry",
     demo: "https://task-ry.vercel.app/",
@@ -12,19 +15,23 @@ const PROJECTS = [
   {
     title: "DANCADE",
     description: "Next.js + Phaser 3 기반 실시간 멀티플레이어 아케이드 게임 플랫폼. Socket.io로 실시간 통신 구현, AWS EC2에 직접 배포·운영",
-    tags: [
-      "Phaser 3", "Socket.io", "Next.js", "TypeScript", "AWS EC2"
-    ],
+    period: "20XX.XX — 20XX.XX",
+    role: "솔로 / 팀 N명 중 역할",
+    metrics: "성과 수치를 입력하세요",
+    tags: ["Phaser 3", "Socket.io", "Next.js", "TypeScript", "AWS EC2"],
     href: "https://github.com/lnu8926-web/Dancade",
-    demo: "http://13.210.110.208/",
+    demo: "http://13.210.110.208/",    // TODO: 도메인 연결 후 교체 권장
     status: "LIVE",
   },
   {
     title: "PIXEL UI KIT",
     description: "8비트 스타일 React 컴포넌트 라이브러리. Tailwind 기반, 다크모드 지원, 완전 타입 안전.",
+    period: "20XX.XX — 진행 중",
+    role: "솔로",
+    metrics: null,
     tags: ["React", "TypeScript", "Storybook", "npm"],
-    href: "#",
-    demo: "#",
+    href: "#",  // TODO: GitHub URL 입력
+    demo: "#",  // TODO: 데모 URL 입력
     status: "WIP",
   },
 ];
@@ -82,6 +89,30 @@ export default function ProjectsSection() {
                 <p className="text-sm text-brand-white/60 leading-relaxed flex-1">
                   {project.description}
                 </p>
+
+                {/* 기간 · 역할 · 성과 */}
+                <div className="flex flex-col gap-1.5 border-t border-white/10 pt-3">
+                  <div className="flex items-center gap-2 text-brand-white/40">
+                    <Clock size={11} strokeWidth={2.5} />
+                    <span className="font-(family-name:--font-pixel) text-[7px] uppercase tracking-wide">
+                      {project.period}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-brand-white/40">
+                    <Users size={11} strokeWidth={2.5} />
+                    <span className="font-(family-name:--font-pixel) text-[7px] uppercase tracking-wide">
+                      {project.role}
+                    </span>
+                  </div>
+                  {project.metrics && (
+                    <div className="flex items-center gap-2 text-brand-blue/70">
+                      <TrendingUp size={11} strokeWidth={2.5} />
+                      <span className="font-(family-name:--font-pixel) text-[7px] uppercase tracking-wide">
+                        {project.metrics}
+                      </span>
+                    </div>
+                  )}
+                </div>
 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
