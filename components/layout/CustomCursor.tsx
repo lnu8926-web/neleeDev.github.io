@@ -5,10 +5,19 @@ import { useEffect, useRef, useState } from "react";
 export default function CustomCursor() {
   const [pos, setPos] = useState({ x: -100, y: -100 });
   const [angle, setAngle] = useState(0);
+  const [active, setActive] = useState(false);
   const prev = useRef({ x: -100, y: -100 });
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
+      const target = document.elementFromPoint(e.clientX, e.clientY);
+      const inHero = Boolean(target?.closest("#home"));
+      setActive(inHero);
+
+      if (!inHero) {
+        return;
+      }
+
       const dx = e.clientX - prev.current.x;
       const dy = e.clientY - prev.current.y;
 
@@ -20,8 +29,17 @@ export default function CustomCursor() {
       setPos({ x: e.clientX, y: e.clientY });
     };
 
+    const onLeave = () => {
+      setActive(false);
+    };
+
     window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
+    window.addEventListener("blur", onLeave);
+
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("blur", onLeave);
+    };
   }, []);
 
   return (
@@ -36,6 +54,8 @@ export default function CustomCursor() {
         pointerEvents: "none",
         zIndex: 99999,
         imageRendering: "pixelated",
+        opacity: active ? 1 : 0,
+        transition: "opacity 120ms ease",
       }}
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" shapeRendering="crispEdges">

@@ -9,7 +9,6 @@ import Container from "@/components/layout/Container";
 const NAV_LINKS = [
   { label: "HOME", href: "#home" },
   { label: "ABOUT", href: "#about" },
-  { label: "EXPERIENCE", href: "#experience" },
   { label: "PROJECTS", href: "#projects" },
   { label: "CONTACT", href: "#contact" },
 ];

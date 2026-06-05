@@ -16,7 +16,6 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: none;
   scrollbar-width: none;
   scrollbar-gutter: stable both-edges;
 }
@@ -25,7 +24,11 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-a, button { cursor: none; }
+#home,
+#home a,
+#home button {
+  cursor: none;
+}
 
 :root {
   --background: #111;

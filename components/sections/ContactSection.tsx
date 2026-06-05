@@ -1,5 +1,6 @@
 import { GitBranch, Mail } from "lucide-react";
 import Container from "@/components/layout/Container";
+import SectionHeader from "@/components/sections/SectionHeader";
 
 export default function ContactSection() {
   return (
@@ -9,54 +10,18 @@ export default function ContactSection() {
       style={{ background: "linear-gradient(to bottom, #0d0d0d, #111111)" }}
     >
       <Container className="relative py-20 flex flex-col items-center">
-
-        {/* 배지 — 핑크 + 블루 혼합 */}
-        <div
-          className="inline-flex items-center gap-2 border px-4 py-1.5 mb-12"
-          style={{
-            background: "linear-gradient(90deg, rgba(92,124,250,0.12), rgba(255,133,179,0.12))",
-            borderColor: "rgba(92,124,250,0.3)",
-            animation: "fadeInUp 0.6s ease both",
-          }}
-        >
-          <span className="w-1.5 h-1.5 bg-brand-blue animate-pulse" />
-          <span className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest text-brand-white/80">
-            CONTACT
-          </span>
-          <span className="w-1.5 h-1.5 bg-brand-pink animate-pulse" />
-        </div>
-
-        {/* 헤드라인 */}
-        <h2
-          className="font-(family-name:--font-pixel) text-xl md:text-2xl uppercase text-center mb-4 leading-relaxed"
-          style={{ animation: "fadeInUp 0.6s ease 0.1s both" }}
-        >
-          <span className="text-brand-pink/60 glow-pink">&gt;</span>
-          {" "}
-          <span className="glow-blue text-brand-white">CONTACT</span>
-          <span className="text-brand-white/40">.</span>
-          <span className="glow-pink text-brand-pink">init</span>
-          <span className="text-brand-white/40">()</span>
-        </h2>
-
-        {/* 서브텍스트 */}
-        <p
-          className="text-base text-brand-white/60 leading-relaxed text-center max-w-md mb-4"
-          style={{ animation: "fadeInUp 0.6s ease 0.2s both" }}
-        >
-          새로운 기회와 협업 제안을 기다리고 있습니다.
-        </p>
-        <p
-          className="font-(family-name:--font-pixel) text-[8px] text-brand-white/30 uppercase tracking-widest mb-12"
-          style={{ animation: "fadeInUp 0.6s ease 0.3s both" }}
-        >
-          lnu8926@gmail.com
-        </p>
+        <SectionHeader
+          kicker="CONTACT"
+          title="CONTACT.init()"
+          description="새로운 기회와 협업 제안을 기다리고 있습니다."
+          align="center"
+          className="mb-12"
+        />
 
         {/* 버튼 — 핑크(이메일) + 블루(GitHub) */}
         <div
           className="flex flex-col sm:flex-row gap-4"
-          style={{ animation: "fadeInUp 0.6s ease 0.4s both" }}
+          style={{ animation: "fadeInUp 0.6s ease 0.1s both" }}
         >
           <a
             href="mailto:lnu8926@gmail.com"
@@ -83,10 +48,7 @@ export default function ContactSection() {
         </div>
 
         {/* 하단 장식 */}
-        <p
-          className="font-(family-name:--font-pixel) text-[7px] text-brand-white/15 uppercase tracking-widest mt-20"
-          style={{ animation: "fadeInUp 0.6s ease 0.5s both" }}
-        >
+        <p className="font-(family-name:--font-pixel) text-[7px] text-brand-white/15 uppercase tracking-widest mt-20" style={{ animation: "fadeInUp 0.6s ease 0.2s both" }}>
           © 2026 LEE Nam-eun — Built with Next.js
         </p>
 

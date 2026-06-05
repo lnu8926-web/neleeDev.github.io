@@ -1,22 +1,23 @@
 import { GitBranch, Mail, FileDown } from "lucide-react";
 import PixelAvatar from "@/components/sections/PixelAvatar";
 import Container from "@/components/layout/Container";
+import SectionHeader from "@/components/sections/SectionHeader";
 
 const SKILL_GROUPS = [
   {
     label: "Lang / Framework / Library",
     color: "#5C7CFA",
-    skills: ["HTML", "CSS3", "TypeScript", "React", "Git", "JAVA", "JavaScript", "MSW", "SQL", "Next.js", "TanStack Query"],
+    skills: ["Next.js", "React", "TypeScript", "TanStack Query", "Zustand", "Zod", "Tailwind CSS", "Phaser 3", "Recharts", "Java(Spring)", "Node.js", "PostgreSQL", "Socket.io", "JWT", "Axios"],
   },
   {
     label: "Tools & Collaboration",
     color: "#FF85B3",
-    skills: ["Figma", "Notion", "Google Workspace", "VSCode", "AI 활용", "Jira", "Slack", "Discord", "Postman"],
+    skills: ["Git", "Figma", "Notion", "Jira", "Slack", "Discord", "Postman", "VSCode"],
   },
   {
     label: "Infra / DevOps",
     color: "#6ee7b7",
-    skills: ["Vercel", "GitHub Actions", "AWS", "Docker", "Supabase", "Firebase", "GitHub Pages"],
+    skills: ["Docker", "AWS", "Terraform", "Vercel", "GitHub Actions", "Firebase", "Supabase"],
   },
 ];
 
@@ -29,21 +30,18 @@ export default function AboutSection() {
     >
       {/* flex-1로 컨테이너가 섹션 전체 높이를 채우고, justify-evenly로 세 블록에 공간 분배 */}
       <Container className="relative flex-1 py-10 md:py-[clamp(1rem,3dvh,3rem)] flex flex-col justify-center gap-[clamp(1rem,2.5dvh,2rem)]">
-
-        {/* 1. ABOUT ME 배지 */}
-        <div className="flex justify-center" style={{ animation: "fadeInUp 0.6s ease both" }}>
-          <div className="inline-flex items-center gap-2 bg-brand-blue/15 border border-brand-blue/30 px-4 py-1.5">
-            <span className="w-1.5 h-1.5 bg-brand-pink animate-pulse" />
-            <span className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest text-brand-blue/90">
-              ABOUT ME
-            </span>
-          </div>
-        </div>
+        <SectionHeader
+          kicker="ABOUT ME"
+          title="LEE Nam-eun"
+          description="프론트엔드와 풀스택 경험을 바탕으로, 실제 운영과 협업에 바로 쓰이는 인터페이스를 만드는 개발자입니다."
+          align="center"
+          className="mb-2"
+        />
 
         {/* 2. 프로필 그리드: 아바타·이름·역할(왼쪽) + 소개(오른쪽) */}
         <div
           className="grid grid-cols-1 md:grid-cols-[5fr_7fr] gap-8 md:gap-10 md:items-stretch"
-          style={{ animation: "fadeInUp 0.6s ease 0.1s both" }}
+          style={{ animation: "fadeInUp 0.6s ease 0.05s both" }}
         >
           {/* 왼쪽 — 데스크톱에서 left-align으로 스킬 카드 왼쪽 끝선과 맞춤 */}
           <div className="flex flex-col items-center md:items-start gap-3 h-full">
@@ -53,9 +51,6 @@ export default function AboutSection() {
             >
               <PixelAvatar />
             </div>
-            <h2 className="font-(family-name:--font-pixel) text-xl md:text-2xl text-brand-white uppercase glow-blue">
-              LEE Nam-eun
-            </h2>
             <p className="font-(family-name:--font-pixel) text-[9px] tracking-widest">
               <span className="text-brand-pink/70">&lt;</span>
               <span className="text-brand-blue/80">FRONT-END DEVELOPER</span>
