@@ -11,7 +11,6 @@ export default function ContactSection() {
     >
       <Container className="relative py-20 flex flex-col items-center">
         <SectionHeader
-          kicker="CONTACT"
           title="CONTACT.init()"
           description="새로운 기회와 협업 제안을 기다리고 있습니다."
           align="center"
@@ -29,7 +28,7 @@ export default function ContactSection() {
             style={{ boxShadow: "4px 4px 0px rgba(255,133,179,0.25)" }}
           >
             <Mail size={16} strokeWidth={2.5} />
-            <span className="font-(family-name:--font-pixel) text-[9px] uppercase tracking-wide">
+            <span className="text-xs font-semibold tracking-[0.08em]">
               이메일 보내기
             </span>
           </a>
@@ -41,14 +40,14 @@ export default function ContactSection() {
             style={{ boxShadow: "4px 4px 0px rgba(92,124,250,0.25)" }}
           >
             <GitBranch size={16} strokeWidth={2.5} />
-            <span className="font-(family-name:--font-pixel) text-[9px] uppercase tracking-wide">
+            <span className="text-xs font-semibold tracking-[0.08em] uppercase">
               GitHub
             </span>
           </a>
         </div>
 
         {/* 하단 장식 */}
-        <p className="font-(family-name:--font-pixel) text-[7px] text-brand-white/15 uppercase tracking-widest mt-20" style={{ animation: "fadeInUp 0.6s ease 0.2s both" }}>
+        <p className="text-[10px] text-brand-white/20 uppercase tracking-[0.12em] mt-20" style={{ animation: "fadeInUp 0.6s ease 0.2s both" }}>
           © 2026 LEE Nam-eun — Built with Next.js
         </p>
 

@@ -3,6 +3,7 @@ import { Press_Start_2P, Gothic_A1 } from "next/font/google";
 import BootWrapper from "@/components/layout/BootWrapper";
 import CustomCursor from "@/components/layout/CustomCursor";
 import ScrollController from "@/components/layout/ScrollController";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const pixelFont = Press_Start_2P({
@@ -35,6 +36,14 @@ export default function RootLayout({
         <CustomCursor />
         <ScrollController />
         <BootWrapper>{children}</BootWrapper>
+        <Toaster
+          position="bottom-right"
+          theme="dark"
+          toastOptions={{
+            className:
+              "border border-white/20 bg-brand-dark text-brand-white shadow-[4px_4px_0px_rgba(255,133,179,0.25)]",
+          }}
+        />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
-import { GitBranch, Mail, FileDown } from "lucide-react";
+import { GitBranch, FileDown } from "lucide-react";
 import PixelAvatar from "@/components/sections/PixelAvatar";
 import Container from "@/components/layout/Container";
-import SectionHeader from "@/components/sections/SectionHeader";
+import CopyEmailButton from "@/components/ui/CopyEmailButton";
 
 const SKILL_GROUPS = [
   {
@@ -21,118 +21,128 @@ const SKILL_GROUPS = [
   },
 ];
 
+const INTRO_POINTS = [
+  "기획 단계 참여부터 최종 배포 및 운영까지 서비스 구축의 전 과정을 실행 가능한 단위로 설계합니다.",
+  "QA·보안·실사용 피드백을 반영해 운영 단계에서 발생하는 변수까지 고려한 안정적인 인터페이스를 지향합니다.",
+  "백엔드와의 협업 시 API 흐름과 서버 구조를 함께 이해해 커뮤니케이션 비용을 줄이고 구현 속도를 높입니다.",
+] as const;
+
+const CORE_STRENGTHS = [
+  {
+    title: "주도적 실행력",
+    description: "팀에 필요한 일을 먼저 찾아 행동으로 옮기며, 돌발 변수가 생기더라도 빠르게 대처해 계획된 마감 기한을 철저히 지킵니다.",
+  },
+  {
+    title: "기획을 아는 개발자",
+    description: "서비스 흐름에 대한 이해를 바탕으로 기획 의도를 읽고, 개발 착수 전에 모호한 요구사항을 정리합니다.",
+  },
+  {
+    title: "사용자 환경 중심",
+    description: "현장 피드백 데이터를 바탕으로 유저 환경의 변수를 제어하며, 안정적인 서비스를 위해 렌더링 성능과 예외 처리를 개선합니다.",
+  },
+] as const;
+
 export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative scanlines overflow-hidden flex flex-col md:min-h-[calc(100dvh-var(--nav-h))] scroll-mt-14 border-t border-white/10"
-      style={{ background: "linear-gradient(to bottom, #161616, #111111)" }}
+      className="relative scanlines overflow-hidden border-t border-white/10 bg-brand-dark text-brand-white scroll-mt-14 min-h-[calc(100svh-3.5rem)]"
     >
-      {/* flex-1로 컨테이너가 섹션 전체 높이를 채우고, justify-evenly로 세 블록에 공간 분배 */}
-      <Container className="relative flex-1 py-10 md:py-[clamp(1rem,3dvh,3rem)] flex flex-col justify-center gap-[clamp(1rem,2.5dvh,2rem)]">
-        <SectionHeader
-          kicker="ABOUT ME"
-          title="LEE Nam-eun"
-          description="프론트엔드와 풀스택 경험을 바탕으로, 실제 운영과 협업에 바로 쓰이는 인터페이스를 만드는 개발자입니다."
-          align="center"
-          className="mb-2"
-        />
+      <Container className="relative py-14 sm:py-16 lg:py-20">
+        <div className="mb-8 space-y-2">
+          <h2 className="font-(family-name:--font-pixel) text-2xl uppercase tracking-widest text-brand-white sm:text-3xl md:text-4xl">
+            ABOUT
+          </h2>
+        </div>
 
-        {/* 2. 프로필 그리드: 아바타·이름·역할(왼쪽) + 소개(오른쪽) */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-[5fr_7fr] gap-8 md:gap-10 md:items-stretch"
-          style={{ animation: "fadeInUp 0.6s ease 0.05s both" }}
-        >
-          {/* 왼쪽 — 데스크톱에서 left-align으로 스킬 카드 왼쪽 끝선과 맞춤 */}
-          <div className="flex flex-col items-center md:items-start gap-3 h-full">
-            <div
-              className="border border-brand-blue/30 bg-brand-grey/50 p-3"
-              style={{ boxShadow: "0 0 24px rgba(92,124,250,0.15), 4px 4px 0px rgba(92,124,250,0.3)" }}
-            >
-              <PixelAvatar />
-            </div>
-            <p className="font-(family-name:--font-pixel) text-[9px] tracking-widest">
-              <span className="text-brand-pink/70">&lt;</span>
-              <span className="text-brand-blue/80">FRONT-END DEVELOPER</span>
-              <span className="text-brand-pink/70"> /&gt;</span>
-            </p>
-            {/* 버튼 — mt-auto로 왼쪽 컬럼 하단 고정 */}
-            <div className="flex gap-3 flex-wrap justify-center md:justify-start mt-auto">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 border border-white/20 px-3 py-2 bg-brand-grey shadow-[2px_2px_0px_rgba(92,124,250,0.2)] hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-colors text-brand-white/70"
-              >
-                <GitBranch size={14} strokeWidth={2.5} />
-                <span className="font-(family-name:--font-pixel) text-[8px] uppercase">GITHUB</span>
-              </a>
-              <a
-                href="mailto:lnu8926@gmail.com"
-                className="flex items-center gap-1.5 border border-white/20 px-3 py-2 bg-brand-grey shadow-[2px_2px_0px_rgba(92,124,250,0.2)] hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-colors text-brand-white/70"
-              >
-                <Mail size={14} strokeWidth={2.5} />
-                <span className="font-(family-name:--font-pixel) text-[8px] uppercase">EMAIL</span>
-              </a>
-              {/* TODO: 이력서 PDF를 /public/resume.pdf 에 두고 href 연결 */}
-              <a
-                href="/resume.pdf"
-                download
-                className="flex items-center gap-1.5 border border-brand-pink/50 px-3 py-2 bg-brand-grey shadow-[2px_2px_0px_rgba(255,133,179,0.2)] hover:bg-brand-pink hover:border-brand-pink hover:text-white transition-colors text-brand-pink/70"
-              >
-                <FileDown size={14} strokeWidth={2.5} />
-                <span className="font-(family-name:--font-pixel) text-[8px] uppercase">RESUME</span>
-              </a>
-            </div>
+        <div className="border border-white/10 bg-brand-grey/30" style={{ animation: "fadeInUp 0.6s ease 0.05s both" }}>
+          <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-brand-dark/50 px-4 py-3 text-sm">
+            <p className="text-brand-blue/80">이남은 · 프론트엔드 개발자</p>
+            <span className="border border-white/15 px-2 py-1 text-[10px] uppercase tracking-[0.14em] text-brand-white/60">Open to Work</span>
           </div>
 
-          {/* 오른쪽: 소개 텍스트 */}
-          <ul className="text-sm text-brand-white/70 leading-relaxed border-l-4 border-brand-blue/50 pl-4 bg-brand-grey/40 flex flex-col justify-center gap-4 py-4 break-keep h-full">
-            {[
-              "기획 단계 참여부터 최종 배포 및 운영까지 서비스 구축의 모든 과정을 파악하고 실행에 옮기는 프론트엔드 개발자",
-              "QA와 보안 및 현장 피드백 데이터를 반영하여 실제 운영 환경에서 발생 가능한 변수까지 방어하는 안정적인 설계",
-              "JAVA 실무 경험을 활용해 API 흐름과 서버 코드를 직접 분석하여 백엔드 개발자와의 소통 비용을 줄이는 기술 역량",
-            ].map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="text-brand-blue/70 shrink-0">▸</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* 3. 스킬 3열 그리드 */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-3 md:items-stretch"
-          style={{ animation: "fadeInUp 0.6s ease 0.2s both" }}
-        >
-          {SKILL_GROUPS.map((group) => (
-            <div
-              key={group.label}
-              className="border border-white/10 bg-brand-grey flex flex-col"
-              style={{ boxShadow: `4px 4px 0px ${group.color}40` }}
-            >
-              {/* 헤더 — 축약 라벨 + 작은 폰트로 한 줄 유지 */}
-              <div className="px-3 py-2.5 border-b border-white/10 shrink-0" style={{ backgroundColor: `${group.color}18` }}>
-                <span className="font-(family-name:--font-pixel) text-[9px] uppercase tracking-wide" style={{ color: group.color }}>
-                  ▸ {group.label}
-                </span>
+          <div className="grid gap-0 md:grid-cols-[240px_1fr]">
+            <div className="border-b border-white/10 p-4 md:border-b-0 md:border-r md:border-white/10">
+              <div className="border border-white/10 bg-brand-grey/60 p-3 flex items-center justify-center">
+                <div className="scale-110 origin-center">
+                  <PixelAvatar />
+                </div>
               </div>
-              {/* 바디 */}
-              <div className="p-3 flex flex-wrap gap-1.5 flex-1 content-start">
-                {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-sm px-3 py-1.5 text-brand-white/80 border border-white/15 bg-brand-dark tracking-wide"
-                  >
-                    {skill}
-                  </span>
-                ))}
+
+              <div className="mt-4 border border-white/10 bg-brand-dark/45 p-3">
+                <p className="text-[10px] uppercase tracking-[0.14em] text-brand-blue/75">Focus</p>
+                <p className="mt-2 text-sm text-brand-white/70 leading-relaxed">Frontend Product Development</p>
+                <p className="mt-1 text-xs text-brand-white/50">React · Next.js · TypeScript</p>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                <a
+                  href="https://github.com/lnu8926-web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 border border-white/20 bg-brand-dark px-3 py-2 text-[11px] uppercase tracking-[0.14em] text-brand-white/80 transition-colors hover:bg-brand-light"
+                >
+                  <GitBranch size={13} strokeWidth={2.5} />
+                  Github
+                </a>
+                <CopyEmailButton
+                  email="lnu8926@gmail.com"
+                  idleLabel="Email 복사"
+                  className="inline-flex items-center gap-1.5 border border-white/20 bg-brand-dark px-3 py-2 text-[11px] uppercase tracking-[0.14em] text-brand-white/80 transition-colors hover:bg-brand-light"
+                />
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="inline-flex items-center gap-1.5 border border-brand-pink/50 bg-brand-dark px-3 py-2 text-[11px] uppercase tracking-[0.14em] text-brand-pink/80 transition-colors hover:bg-brand-pink hover:text-white"
+                >
+                  <FileDown size={13} strokeWidth={2.5} />
+                  Resume
+                </a>
               </div>
             </div>
-          ))}
-        </div>
 
+            <div className="p-4 md:p-5 space-y-5">
+              <section className="space-y-2">
+                <h3 className="text-xs uppercase tracking-[0.16em] text-brand-blue/80">핵심 요약</h3>
+                <ul className="space-y-1.5 text-sm text-brand-white/70 leading-relaxed break-keep">
+                  {INTRO_POINTS.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-2 h-1 w-1 shrink-0 bg-brand-white/60" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="space-y-2">
+                <h3 className="text-xs uppercase tracking-[0.16em] text-brand-blue/80">소프트 스킬</h3>
+                <div className="grid gap-2">
+                  {CORE_STRENGTHS.map((item) => (
+                    <div key={item.title} className="border border-white/10 bg-brand-dark/45 p-3">
+                      <p className="text-[11px] uppercase tracking-[0.14em] text-brand-blue/75">{item.title}</p>
+                      <p className="mt-1.5 text-sm text-brand-white/65 leading-relaxed break-keep">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="space-y-2">
+                <h3 className="text-xs uppercase tracking-[0.16em] text-brand-blue/80">기술 스택</h3>
+                <div className="overflow-hidden border border-white/10 bg-brand-dark/45">
+                  {SKILL_GROUPS.map((group, idx) => (
+                    <div
+                      key={group.label}
+                      className={`grid gap-3 px-3 py-2.5 text-sm sm:grid-cols-[180px_1fr] ${idx !== SKILL_GROUPS.length - 1 ? "border-b border-white/10" : ""}`}
+                    >
+                      <p className="text-brand-blue/75">{group.label}</p>
+                      <p className="text-brand-white/70 break-keep">{group.skills.join(", ")}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
       </Container>
     </section>
   );

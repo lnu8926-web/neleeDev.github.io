@@ -41,7 +41,7 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className="font-(family-name:--font-pixel) text-[8px] text-brand-white/60 uppercase tracking-widest px-3 py-2 hover:text-brand-white hover:bg-white/10 transition-colors border border-transparent hover:border-white/20"
+              className="font-(family-name:--font-pixel) text-[10px] text-brand-white/60 uppercase tracking-[0.12em] px-3 py-2 hover:text-brand-white hover:bg-white/10 transition-colors border border-transparent hover:border-white/20"
             >
               {link.label}
             </Link>
@@ -69,7 +69,7 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block font-(family-name:--font-pixel) text-[9px] text-brand-white/60 uppercase tracking-widest px-4 py-3 border-b border-white/10 hover:bg-white/5 hover:text-brand-white"
+              className="block font-(family-name:--font-pixel) text-[10px] text-brand-white/60 uppercase tracking-[0.12em] px-4 py-3 border-b border-white/10 hover:bg-white/5 hover:text-brand-white"
             >
               {link.label}
             </a>

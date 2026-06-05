@@ -73,7 +73,7 @@ export default function LoadingScreen({ onDone }: Props) {
 
         {/* status + bar */}
         <div className="flex flex-col gap-4">
-          <p className="font-(family-name:--font-pixel) text-[8px] text-brand-white/50 uppercase tracking-widest min-h-[1em]">
+          <p className="font-(family-name:--font-pixel) text-[10px] text-brand-white/50 uppercase tracking-[0.12em] min-h-[1em]">
             {STATUS[statusIdx]}
             <span className="animate-[blink_1s_step-end_infinite] ml-0.5">▌</span>
           </p>
@@ -91,10 +91,10 @@ export default function LoadingScreen({ onDone }: Props) {
           </div>
 
           <div className="flex justify-between">
-            <span className="font-(family-name:--font-pixel) text-[7px] text-white/40 uppercase tracking-widest">
+            <span className="font-(family-name:--font-pixel) text-[9px] text-white/40 uppercase tracking-[0.12em]">
               LOADING
             </span>
-            <span className="font-(family-name:--font-pixel) text-[7px] text-white tabular-nums">
+            <span className="font-(family-name:--font-pixel) text-[9px] text-white tabular-nums">
               {progress}%
             </span>
           </div>

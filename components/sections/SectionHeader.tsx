@@ -1,5 +1,5 @@
 interface SectionHeaderProps {
-  kicker: string;
+  kicker?: string;
   title?: string;
   description?: string;
   align?: "left" | "center";
@@ -15,22 +15,24 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className={className}>
-      <div
-        className={[
-          "inline-flex items-center gap-2 bg-brand-blue/15 border border-brand-blue/30 px-4 py-1.5 mb-5",
-          align === "center" ? "mx-auto" : "",
-        ].join(" ")}
-      >
-        <span className="h-2 w-2 rounded-full bg-brand-blue" />
-        <span className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest text-brand-blue/90">
-          {kicker}
-        </span>
-      </div>
+      {kicker && (
+        <div
+          className={[
+            "inline-flex items-center gap-2 bg-brand-blue/15 border border-brand-blue/30 px-4 py-1.5 mb-5",
+            align === "center" ? "mx-auto" : "",
+          ].join(" ")}
+        >
+          <span className="h-2 w-2 rounded-full bg-brand-blue" />
+          <span className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest text-brand-blue/90">
+            {kicker}
+          </span>
+        </div>
+      )}
 
       {title && (
         <h2
           className={[
-            "text-[clamp(2rem,3vw,3.5rem)] leading-[0.95] font-semibold tracking-[-0.04em] text-brand-white",
+            "font-(family-name:--font-pixel) text-2xl uppercase tracking-widest text-brand-white sm:text-3xl md:text-4xl",
             align === "center" ? "text-center" : "text-left",
           ].join(" ")}
         >
