@@ -141,28 +141,18 @@ const PROJECTS = [
   },
 ] as const;
 
-const CATEGORIES = ["ALL", "PERSONAL", "TEAM", "WORK"] as const;
+const CATEGORIES = ["ALL", "PERSONAL", "TEAM"] as const;
 
 export default function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState<(typeof CATEGORIES)[number]>("ALL");
-  const [activeTag, setActiveTag] = useState<string>("ALL");
   const [selectedProject, setSelectedProject] = useState<(typeof PROJECTS)[number] | null>(null);
-
-  const tags = useMemo(() => {
-    const allTags = new Set<string>();
-    PROJECTS.forEach((project) => {
-      project.tags.forEach((tag) => allTags.add(tag));
-    });
-    return ["ALL", ...Array.from(allTags)];
-  }, []);
 
   const filteredProjects = useMemo(() => {
     return PROJECTS.filter((project) => {
       const categoryMatched = activeCategory === "ALL" || project.category === activeCategory;
-      const tagMatched = activeTag === "ALL" || (project.tags as readonly string[]).includes(activeTag);
-      return categoryMatched && tagMatched;
+      return categoryMatched;
     });
-  }, [activeCategory, activeTag]);
+  }, [activeCategory]);
 
   const sortedProjects = useMemo(() => {
     const getPeriodSortValue = (period: string) => {
@@ -206,7 +196,7 @@ export default function ProjectsSection() {
           </div>
 
           <div className="border-y border-white/20">
-            <div className="grid grid-cols-2 border-b border-white/20 md:grid-cols-4">
+            <div className="grid grid-cols-2 border-b border-white/20 md:grid-cols-3">
               {CATEGORIES.map((category) => {
                 const isActive = activeCategory === category;
                 return (
@@ -223,18 +213,6 @@ export default function ProjectsSection() {
               })}
             </div>
 
-            <div className="flex flex-wrap gap-x-5 gap-y-2 px-2 py-3 sm:px-3">
-              {tags.map((tag) => (
-                <button
-                  key={tag}
-                  type="button"
-                  onClick={() => setActiveTag(tag)}
-                  className={`text-sm transition-colors ${activeTag === tag ? "text-brand-white" : "text-brand-white/45 hover:text-brand-white/80"}`}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
 
