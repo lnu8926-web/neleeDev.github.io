@@ -172,18 +172,18 @@ const PROJECTS = [
   },
 ] as const;
 
-const CATEGORIES = ["ALL", "PERSONAL", "TEAM"] as const;
+// const CATEGORIES = ["ALL", "PERSONAL", "TEAM"] as const;
 
 export default function ProjectsSection() {
-  const [activeCategory, setActiveCategory] = useState<(typeof CATEGORIES)[number]>("ALL");
+ // const [activeCategory, setActiveCategory] = useState<(typeof CATEGORIES)[number]>("ALL");
   const [selectedProject, setSelectedProject] = useState<(typeof PROJECTS)[number] | null>(null);
 
-  const filteredProjects = useMemo(() => {
-    return PROJECTS.filter((project) => {
-      const categoryMatched = activeCategory === "ALL" || project.category === activeCategory;
-      return categoryMatched;
-    });
-  }, [activeCategory]);
+  // const filteredProjects = useMemo(() => {
+  //   return PROJECTS.filter((project) => {
+  //     const categoryMatched = activeCategory === "ALL" || project.category === activeCategory;
+  //     return categoryMatched;
+  //   });
+  // }, []);
 
   const sortedProjects = useMemo(() => {
     const getPeriodSortValue = (period: string) => {
@@ -196,8 +196,8 @@ export default function ProjectsSection() {
       return year * 100 + month;
     };
 
-    return [...filteredProjects].sort((a, b) => getPeriodSortValue(b.period) - getPeriodSortValue(a.period));
-  }, [filteredProjects]);
+    return [...PROJECTS].sort((a, b) => getPeriodSortValue(b.period) - getPeriodSortValue(a.period));
+  }, []);
 
   useEffect(() => {
     if (!selectedProject) return;
@@ -226,6 +226,7 @@ export default function ProjectsSection() {
             </h2>
           </div>
 
+          {/*
           <div className="border-y border-white/20">
             <div className="grid grid-cols-2 border-b border-white/20 md:grid-cols-3">
               {CATEGORIES.map((category) => {
@@ -245,6 +246,7 @@ export default function ProjectsSection() {
             </div>
 
           </div>
+          */}
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -310,11 +312,13 @@ export default function ProjectsSection() {
           ))}
         </div>
 
+        {/*
         {filteredProjects.length === 0 && (
           <div className="border border-white/10 bg-brand-grey/30 px-4 py-10 text-center text-sm text-brand-white/60">
             선택한 필터에 해당하는 프로젝트가 없습니다.
           </div>
         )}
+        */}
 
         {selectedProject && (
           <div
