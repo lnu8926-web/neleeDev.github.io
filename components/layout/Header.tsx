@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import Button from "@/components/ui/Button";
 import Container from "@/components/layout/Container";
 
 const NAV_LINKS = [
@@ -149,15 +148,6 @@ export default function Header() {
     };
   }, []);
 
-  const moveContactSection = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.warn("Contact section not found");
-    }
-  }
-
   return (
     <header className="bg-brand-grey border-b border-white/10 sticky top-0 z-50">
       <Container className="h-14 flex items-center justify-between">
@@ -184,9 +174,6 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Button variant="primary" size="sm" className="ml-2" onClick={() => moveContactSection()}>
-            HIRE ME
-          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -217,11 +204,6 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-          <div className="px-4 py-3">
-            <Button variant="primary" size="sm" className="w-full justify-center" onClick={() => moveContactSection()}>
-              HIRE ME
-            </Button>
-          </div>
         </div>
       )}
     </header>
