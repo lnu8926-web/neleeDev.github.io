@@ -137,7 +137,7 @@ const PROJECTS = [
     ],
     tags: ["Next.js", "TypeScript", "React", "TanStack Query", "Zustand", "Toss Payments"],
     href: "https://github.com/8ocket/Frontend.git",
-    demo: "#",
+    demo: "https://youtu.be/UnUwolrEdVk?si=G3gjmPnE3FIvpebX",
     image: "/projectImg/mindLog.png",
   },
 ] as const;
