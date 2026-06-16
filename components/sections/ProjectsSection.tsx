@@ -7,37 +7,6 @@ import Container from "@/components/layout/Container";
 
 const PROJECTS = [
   {
-    title: "SyncBoard",
-    category: "PERSONAL",
-    period: "2026.06 ~ 2026.07",
-    summary: "실시간 메모·드로잉·코멘트 협업 화이트보드",
-    backgroundGoals: [
-      "원격 협업 환경에서 아이디어 스케치와 피드백이 분산되는 문제를 해소",
-      "여러 사용자가 동일 보드에서 동시에 작업할 수 있는 실시간 협업 경험을 구현",
-    ],
-    techStack: [
-      { label: "Core", value: "Next.js (App Router), React 19, TypeScript" },
-      { label: "Realtime", value: "Supabase Realtime, WebSocket Event Sync" },
-      { label: "State", value: "Zustand" },
-      { label: "UI", value: "Tailwind CSS 4, Radix UI" },
-    ],
-    roleHighlights: [
-      "보드/카드/코멘트 도메인 모델과 상태 구조를 설계",
-      "생성·수정·삭제·이동 이벤트를 실시간으로 동기화하는 로직을 구현",
-      "동시 수정 시 충돌을 최소화하는 병합 기준을 적용",
-      "드래그 이동, 스냅 정렬, 확대/축소 인터랙션 UX를 구현",
-    ],
-    outcomes: [
-      "다중 사용자 동시 편집이 가능한 협업 화이트보드 MVP 완성",
-      "이벤트 단위 동기화로 체감 지연을 줄여 협업 연속성 확보",
-      "도메인 분리 설계로 권한/템플릿/히스토리 확장 기반 마련",
-    ],
-    tags: ["Next.js", "TypeScript", "Supabase", "Realtime", "Zustand", "Tailwind CSS"],
-    href: "#",
-    demo: "#",
-    image: "/projectImg/taskry.png",
-  },
-  {
     title: "TASKRY",
     category: "TEAM",
     period: "2025.11 ~ 2025.12",
@@ -178,7 +147,7 @@ export default function ProjectsSection() {
  // const [activeCategory, setActiveCategory] = useState<(typeof CATEGORIES)[number]>("ALL");
   const [selectedProject, setSelectedProject] = useState<(typeof PROJECTS)[number] | null>(null);
 
-  // const filteredProjects = useMemo(() => {
+  // z
   //   return PROJECTS.filter((project) => {
   //     const categoryMatched = activeCategory === "ALL" || project.category === activeCategory;
   //     return categoryMatched;

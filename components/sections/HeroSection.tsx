@@ -1,5 +1,5 @@
-import Button from "@/components/ui/Button";
 import HeroHeadline from "@/components/sections/HeroHeadline";
+import HeroActions from "@/components/sections/HeroActions";
 import PixelParticles from "@/components/sections/PixelParticles";
 import Container from "@/components/layout/Container";
 
@@ -17,18 +17,7 @@ export default function HeroSection() {
 
         <HeroHeadline />
 
-        <div className="flex flex-wrap gap-3 justify-center">
-          <a href="#projects">
-            <Button variant="primary" size="lg" className="min-w-40">
-              프로젝트 보기
-            </Button>
-          </a>
-          <a href="#contact">
-            <Button variant="ghost" size="lg" className="min-w-40">
-              연락하기
-            </Button>
-          </a>
-        </div>
+        <HeroActions />
       </Container>
 
       <a
