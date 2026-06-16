@@ -55,7 +55,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
       />
 
       {/* panel */}
-      <div className="relative w-full max-w-md border border-brand-pink/40 bg-[#0d0d0d] shadow-[0_0_40px_rgba(255,133,179,0.12)]">
+      <div className="relative w-full max-w-lg border border-brand-pink/40 bg-[#0d0d0d] shadow-[0_0_40px_rgba(255,133,179,0.12)]">
         {/* header */}
         <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
           <div className="flex items-center gap-2">

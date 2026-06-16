@@ -1,3 +1,5 @@
+'use client'
+
 import { GitBranch, Mail } from "lucide-react";
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/sections/SectionHeader";
