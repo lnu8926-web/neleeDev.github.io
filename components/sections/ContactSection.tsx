@@ -1,6 +1,7 @@
-import { GitBranch, Mail } from "lucide-react";
+import { GitBranch } from "lucide-react";
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/sections/SectionHeader";
+import ContactEmailButton from "@/components/sections/ContactEmailButton";
 
 export default function ContactSection() {
   return (
@@ -22,16 +23,7 @@ export default function ContactSection() {
           className="flex flex-col sm:flex-row gap-4"
           style={{ animation: "fadeInUp 0.6s ease 0.1s both" }}
         >
-          <a
-            href="mailto:lnu8926@gmail.com"
-            className="flex items-center justify-center gap-2 border border-brand-pink px-6 py-3 bg-brand-pink/10 hover:bg-brand-pink hover:text-white transition-colors text-brand-pink"
-            style={{ boxShadow: "4px 4px 0px rgba(255,133,179,0.25)" }}
-          >
-            <Mail size={16} strokeWidth={2.5} />
-            <span className="text-xs font-semibold tracking-[0.08em]">
-              이메일 보내기
-            </span>
-          </a>
+          <ContactEmailButton />
           <a
             href="#"
             target="_blank"
