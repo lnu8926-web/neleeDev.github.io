@@ -1,6 +1,7 @@
 'use client'
 
 import { useActionState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { X, Send, Mail } from 'lucide-react'
 import { toast } from 'sonner'
 import Button from '@/components/ui/Button'
@@ -42,7 +43,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
 
   if (!open) return null
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       role="dialog"
@@ -55,7 +56,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
       />
 
       {/* panel */}
-      <div className="relative w-full max-w-lg border border-brand-pink/40 bg-[#0d0d0d] shadow-[0_0_40px_rgba(255,133,179,0.12)]">
+      <div className="relative w-full max-w-lg border border-brand-pink/40 bg-brand-black shadow-[0_0_40px_rgba(255,133,179,0.12)]">
         {/* header */}
         <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
           <div className="flex items-center gap-2">
@@ -128,6 +129,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
           </Button>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }

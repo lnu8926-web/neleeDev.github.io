@@ -9,10 +9,9 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative scanlines overflow-hidden min-h-screen flex flex-col justify-center border-t border-white/10 scroll-mt-14"
-      style={{ background: "linear-gradient(to bottom, #0d0d0d, #111111)" }}
+      className="relative scanlines overflow-hidden min-h-screen flex flex-col justify-center border-t border-white/10 scroll-mt-14 bg-linear-to-b from-brand-black to-brand-dark"
     >
-      <Container className="relative py-20 flex flex-col items-center">
+      <Container className="relative py-14 sm:py-16 lg:py-20 flex flex-col items-center">
         <SectionHeader
           title="CONTACT.init()"
           description="새로운 기회와 협업 제안을 기다리고 있습니다."
@@ -40,7 +39,7 @@ export default function ContactSection() {
             )}
           </ContactModalTrigger>
           <a
-            href="#"
+            href="https://github.com/lnu8926-web"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 border border-brand-blue px-6 py-3 bg-brand-blue/10 hover:bg-brand-blue hover:text-white transition-colors text-brand-blue"

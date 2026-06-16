@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { GitBranch, ExternalLink, X } from "lucide-react";
 import Container from "@/components/layout/Container";
+import SectionHeader from "@/components/sections/SectionHeader";
 
 const PROJECTS = [
   {
@@ -188,35 +189,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="relative scanlines overflow-hidden border-t border-white/10 bg-brand-dark text-brand-white scroll-mt-14 min-h-[calc(100svh-3.5rem)]">
       <Container className="relative py-14 sm:py-16 lg:py-20">
-        <div className="mb-8 space-y-5">
-          <div className="space-y-2">
-            <h2 className="font-(family-name:--font-pixel) text-2xl uppercase tracking-widest text-brand-white sm:text-3xl md:text-4xl">
-              MY PROJECT
-            </h2>
-          </div>
-
-          {/*
-          <div className="border-y border-white/20">
-            <div className="grid grid-cols-2 border-b border-white/20 md:grid-cols-3">
-              {CATEGORIES.map((category) => {
-                const isActive = activeCategory === category;
-                return (
-                  <button
-                    key={category}
-                    type="button"
-                    onClick={() => setActiveCategory(category)}
-                    className="flex items-center justify-between border-r border-white/20 px-3 py-3 text-left text-xs uppercase tracking-[0.14em] text-brand-white/65 last:border-r-0 hover:text-brand-white"
-                  >
-                    <span>{category}</span>
-                    <span className={`h-2.5 w-2.5 border border-white/60 ${isActive ? "bg-brand-white" : "bg-transparent"}`} />
-                  </button>
-                );
-              })}
-            </div>
-
-          </div>
-          */}
-        </div>
+        <SectionHeader title="MY PROJECT" className="mb-8" />
 
         <div className="grid gap-6 md:grid-cols-2">
           {sortedProjects.map((project, i) => (
@@ -381,14 +354,14 @@ export default function ProjectsSection() {
               <div className="px-5 pb-6 md:px-6 md:pb-6 flex gap-2">
                 <a
                   href={selectedProject.href}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-brand-dark px-4 py-2.5 text-xs uppercase tracking-[0.16em] text-brand-white transition-colors hover:bg-brand-light"
+                  className="inline-flex items-center gap-1.5 border border-white/15 bg-brand-dark px-4 py-2.5 text-xs uppercase tracking-[0.16em] text-brand-white transition-colors hover:bg-brand-light"
                 >
                   <GitBranch size={13} strokeWidth={2.5} />
                   Github
                 </a>
                 <a
                   href={selectedProject.demo}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-brand-blue/40 bg-brand-blue px-4 py-2.5 text-xs uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#4a6ae8]"
+                  className="inline-flex items-center gap-1.5 border border-brand-blue/40 bg-brand-blue px-4 py-2.5 text-xs uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#4a6ae8]"
                 >
                   <ExternalLink size={13} strokeWidth={2.5} />
                   Demo

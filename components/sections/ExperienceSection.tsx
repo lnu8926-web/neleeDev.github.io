@@ -1,4 +1,5 @@
 import Container from "@/components/layout/Container";
+import SectionHeader from "@/components/sections/SectionHeader";
 
 const EXPERIENCES = [
   {
@@ -47,21 +48,11 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="relative scanlines overflow-hidden border-t border-white/10 scroll-mt-14"
-      style={{ background: "linear-gradient(to bottom, #111111, #0d0d0d)" }}
+      className="relative scanlines overflow-hidden border-t border-white/10 scroll-mt-14 bg-linear-to-b from-brand-dark to-brand-black"
     >
-      <Container className="relative py-20">
+      <Container className="relative py-14 sm:py-16 lg:py-20">
 
-        {/* 배지 */}
-        <div
-          className="inline-flex items-center gap-2 bg-brand-blue/15 border border-brand-blue/30 px-4 py-1.5 mb-12"
-          style={{ animation: "fadeInUp 0.6s ease both" }}
-        >
-          <span className="w-1.5 h-1.5 bg-brand-pink animate-pulse" />
-          <span className="font-(family-name:--font-pixel) text-[10px] uppercase tracking-widest text-brand-blue/90">
-          EXPERIENCE
-          </span>
-        </div>
+        <SectionHeader title="EXPERIENCE" className="mb-8" />
 
         {/* 타임라인 */}
         <div className="relative mt-2 pl-5 md:pl-10" style={{ animation: "fadeInUp 0.6s ease 0.1s both" }}>

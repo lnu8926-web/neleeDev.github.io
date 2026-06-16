@@ -2,6 +2,7 @@ import { GitBranch, FileDown } from "lucide-react";
 import PixelAvatar from "@/components/sections/PixelAvatar";
 import Container from "@/components/layout/Container";
 import CopyEmailButton from "@/components/ui/CopyEmailButton";
+import SectionHeader from "@/components/sections/SectionHeader";
 
 const SKILL_GROUPS = [
   {
@@ -49,11 +50,7 @@ export default function AboutSection() {
       className="relative scanlines overflow-hidden border-t border-white/10 bg-brand-dark text-brand-white scroll-mt-14 min-h-[calc(100svh-3.5rem)]"
     >
       <Container className="relative py-14 sm:py-16 lg:py-20">
-        <div className="mb-8 space-y-2">
-          <h2 className="font-(family-name:--font-pixel) text-2xl uppercase tracking-widest text-brand-white sm:text-3xl md:text-4xl">
-            ABOUT
-          </h2>
-        </div>
+        <SectionHeader title="ABOUT" className="mb-8" />
 
         <div className="border border-white/10 bg-brand-grey/30" style={{ animation: "fadeInUp 0.6s ease 0.05s both" }}>
           <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-brand-dark/50 px-4 py-3 text-sm">
