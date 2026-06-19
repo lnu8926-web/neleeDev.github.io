@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
-import { GitBranch, ExternalLink, X } from "lucide-react";
+import { GitBranch, ExternalLink, X, Layers } from "lucide-react";
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/sections/SectionHeader";
 
@@ -68,6 +68,7 @@ const PROJECTS = [
     tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Recharts", "Framer Motion"],
     href: "https://github.com/lnu8926-web/vendichef-brand-page",
     demo: "https://vendichef.vercel.app/",
+    storybook: "https://6a355456aeef366f09679bc0-zthqiytyjj.chromatic.com/",
     image: "/projectImg/VendiChef.png",
   },
   {
@@ -248,6 +249,15 @@ export default function ProjectsSection() {
                     <ExternalLink size={13} strokeWidth={2.5} />
                     Demo
                   </a>
+                  {"storybook" in project && project.storybook && (
+                    <a
+                      href={project.storybook}
+                      className="inline-flex items-center gap-1.5 border border-[#FF4785]/50 bg-[#FF4785]/10 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-[#FF4785] transition-colors hover:bg-[#FF4785]/20"
+                    >
+                      <Layers size={13} strokeWidth={2.5} />
+                      Storybook
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
@@ -348,10 +358,13 @@ export default function ProjectsSection() {
                 <div className="border border-white/10 bg-brand-dark/45 p-3 text-xs text-brand-white/65">
                   <p className="break-all">Github: {selectedProject.href}</p>
                   <p className="mt-1 break-all">Demo: {selectedProject.demo}</p>
+                  {"storybook" in selectedProject && selectedProject.storybook && (
+                    <p className="mt-1 break-all">Storybook: {selectedProject.storybook}</p>
+                  )}
                 </div>
               </div>
 
-              <div className="px-5 pb-6 md:px-6 md:pb-6 flex gap-2">
+              <div className="px-5 pb-6 md:px-6 md:pb-6 flex flex-wrap gap-2">
                 <a
                   href={selectedProject.href}
                   className="inline-flex items-center gap-1.5 border border-white/15 bg-brand-dark px-4 py-2.5 text-xs uppercase tracking-[0.16em] text-brand-white transition-colors hover:bg-brand-light"
@@ -366,6 +379,15 @@ export default function ProjectsSection() {
                   <ExternalLink size={13} strokeWidth={2.5} />
                   Demo
                 </a>
+                {"storybook" in selectedProject && selectedProject.storybook && (
+                  <a
+                    href={selectedProject.storybook}
+                    className="inline-flex items-center gap-1.5 border border-[#FF4785]/50 bg-[#FF4785]/10 px-4 py-2.5 text-xs uppercase tracking-[0.16em] text-[#FF4785] transition-colors hover:bg-[#FF4785]/20"
+                  >
+                    <Layers size={13} strokeWidth={2.5} />
+                    Storybook
+                  </a>
+                )}
               </div>
             </div>
           </div>

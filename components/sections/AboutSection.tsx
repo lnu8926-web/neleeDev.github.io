@@ -1,4 +1,4 @@
-import { GitBranch, FileDown } from "lucide-react";
+import { GitBranch } from "lucide-react";
 import PixelAvatar from "@/components/sections/PixelAvatar";
 import Container from "@/components/layout/Container";
 import CopyEmailButton from "@/components/ui/CopyEmailButton";
@@ -87,14 +87,6 @@ export default function AboutSection() {
                   idleLabel="Email 복사"
                   className="inline-flex items-center gap-1.5 border border-white/20 bg-brand-dark px-3 py-2 text-[11px] uppercase tracking-[0.14em] text-brand-white/80 transition-colors hover:bg-brand-light"
                 />
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="inline-flex items-center gap-1.5 border border-brand-pink/50 bg-brand-dark px-3 py-2 text-[11px] uppercase tracking-[0.14em] text-brand-pink/80 transition-colors hover:bg-brand-pink hover:text-white"
-                >
-                  <FileDown size={13} strokeWidth={2.5} />
-                  Resume
-                </a>
               </div>
             </div>
 
